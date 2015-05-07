@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://github.com/dariosalvi78/pIoT">
+	  <img src="http://openclipart.org/people/Scout/Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="#">Data</a></li>
+        <li><a href="#">Actions</a></li>
+        <li><a href="#">Rules</a></li>
+		<li class="active" ><a href="#">Serial</a></li>
+		<li><a href="#">Logs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="portselector">Serial port:</label>
+      <select class="form-control" id="portselector">
+      </select>
+      <button id="startbtn" class="btn btn-default">Start</button>
+    </div>
+  </form>
+
+  <div class="form-group">
+    <label for="comment">Last 20 lines from serial:</label>
+    <textarea class="form-control" rows="5" id="input"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="sendline">To serial:</label>
+    <input type="text" class="form-control" id="sendline">
+    <button id="sendbtn" class="btn btn-default">Send</button>
+  </div>
+
+</div>
+
+<script>
+$(function(){
+  $.getJSON("/serials", null, function(data) {
+    $('#portselector').empty(); // Remove all <option> child tags.
+    $.each(data, function(index, item) {
+      var opt = $("<option></option>").text(item).val(item);
+      $('#portselector').append(opt);
+    });
+
+    $.getJSON("/serials/current", null, function(data) {
+      if(data.name !== undefined){
+        $('#portselector').val(data.name);
+        $('#startbtn').text("Stop");
+      } else {
+        $('#startbtn').text("Start");
+      }
+
+      $('#startbtn').click(function(){
+        if($('#startbtn').text() === "Start"){
+          $.post('/serials/current', { name: $('#portselector').val() }, function(){
+            $('#startbtn').text("Stop");
+          });
+        } else {
+          $.post('/serials/current', { }, function(){
+            $('#startbtn').text("Start");
+          });
+        }
+      });
+
+      setInterval(function(){
+        $.getJSON("/serials/current", null, function(data) {
+          if(data.name !== undefined){
+            $('#portselector').val(data.name);
+            $('#startbtn').text("Stop");
+          } else {
+            $('#startbtn').text("Start");
+          }
+        });
+      }, 1000);
+    });
+  });
+
+  $('#sendbtn').click(function(){
+    $.post('/serials/current', { sendline: $('#sendline').val() }, function(){
+      $('#sendline').val("");
+    });
+  })
+});
+</script>
+
+</body>
+</html>
