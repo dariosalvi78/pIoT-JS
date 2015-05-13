@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>pIoT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://github.com/dariosalvi78/pIoT">
+	  <img src="http://openclipart.org/people/Scout/Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Dashboard</a></li>
+        <li class="active"><a href="#">Data</a></li>
+        <li><a href="#">Actions</a></li>
+        <li><a href="#">Rules</a></li>
+		<li><a href="serial.html">Serial</a></li>
+		<li><a href="#">Logs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-sm-3">
+      <p class="lead">Node:</p>
+      <div class="list-group" id="nodeslist">
+        <a href="#" class="list-group-item active" id="allnodes">All nodes</a>
+      </div>
+      <p class="lead">Message type:</p>
+      <div class="list-group" id="datatypeslist">
+        <a href="#" class="list-group-item active" id="alldatatypes">All types <span class="badge" id="alldatatypescount"></span></a>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <p class="lead">Messages:</p>
+      <div class="panel-group" id="messages"></div>
+    </div>
+
+      <ul class="pager">
+        <li class="previous"><a href="#">Previous</a></li>
+        <li class="next"><a href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+$(function(){
+
+  //nodes list
+  var selectednode = null;
+  $('#allnodes').click(function(){
+    $('#allnodes').siblings().removeClass('active');
+    $('#allnodes').addClass('active');
+    selectednode = null;
+    refreshContent();
+  });
+  $.getJSON( '/nodes' ,null, function(data){
+    $.each(data, function(index, item) {
+      var nodeoption = $('<a href="#" class="list-group-item" id="node'+item+'">'+item+'</a>');
+      nodeoption.click(function(){
+        nodeoption.siblings().removeClass('active');
+        nodeoption.addclass('active');
+        selectednode = item;
+        refreshContent();
+      });
+      $('#nodeslist').append(nodeoption);
+    });
+  });
+
+  //data type
+  var selectedmessagetype = null;
+  $('#alldatatypes').click(function(){
+    $('#alldatatypes').siblings().removeClass('active');
+    $('#alldatatypes').addClass('active');
+    selectedmessagetype = null;
+    refreshContent();
+  });
+  $.getJSON( '/messagetypes' ,null, function(data){
+    $.each(data, function(index, item) {
+      if(item.name == 'all'){
+        $('#alldatatypescount').text(item.count);
+      } else {
+        var dataoption= $('<a href="#" class="list-group-item">'+item.name+' <span class="badge">'+item.count+'</span></a>');
+        dataoption.click(function(){
+          dataoption.siblings().removeClass('active');
+          dataoption.addClass('active');
+          selectedmessagetype = item.name;
+          refreshContent();
+        });
+        $('#datatypeslist').append(dataoption);
+      }
+    });
+  });
+
+  var refreshContent = function(){
+    var path ='/messages';
+    if(selectedmessagetype != null)
+      path+= '/'+selectedmessagetype;
+    $.getJSON(path ,{
+        from : 0,
+        to : 10
+      }, function(data){
+        $.each(data, function(index, item) {
+          renderMessage(selectedmessagetype, item);
+        });
+      });
+    };
+
+  refreshContent();
+
+  var renderMessage = function(name, m){
+    if(m === null)
+      return;
+    var panel =$('<div class="panel panel-default"></div>');
+    panel.append($('<div class="panel-heading">'+name+'</div>'));
+    var body = $('<div class="panel-body"></div>');
+    panel.append(body);
+
+    for (var prop in m){
+      if(typeof m[prop] === 'number'){
+        var formgroup = $('<div class="form-group"></div>');
+        formgroup.append($('<label for="src">'+prop+'</label>'));
+        formgroup.append($('<input type="number" class="form-control" value="'+m[prop]+'">'));
+        body.append(formgroup);
+      } else if(typeof m[prop] === 'string'){
+        var formgroup = $('<div class="form-group"></div>');
+        formgroup.append($('<label for="src">'+prop+'</label>'));
+        formgroup.append($('<input type="text" class="form-control" value="'+m[prop]+'">'));
+        body.append(formgroup);
+      } else if(typeof m[prop] === 'boolean'){
+        var checkbox = $('<div class="checkbox"></div>');
+        checkbox.append($('<label><input type="checkbox" value="">'+prop+'</label>'));
+        body.append(checkbox);
+      } else if(typeof m[prop] === 'object'){
+        /*<p data-toggle="collapse" data-target="#demo"><strong>Subobject</strong></p>
+        <div id="demo" class="collapse">
+          <div class="panel panel-default">
+            <div class="panel-heading">Panel Header</div>
+            <div class="panel-body">Panel Content</div>
+          </div>
+        </div>*/
+      }
+      var savebtn = $('<button type="button" class="btn btn-default">Save</button>')
+      body.append(savebtn);
+      var deletebtn = $('<button type="button" class="btn btn-default">Delete</button>')
+      body.append(deletebtn);
+    }
+    $('#messages').append(panel);
+  };
+});
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>pIoT</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -19,7 +19,7 @@
     <div>
       <ul class="nav navbar-nav">
         <li><a href="index.html">Dashboard</a></li>
-        <li><a href="#">Data</a></li>
+        <li><a href="data.html">Data</a></li>
         <li><a href="#">Actions</a></li>
         <li><a href="#">Rules</a></li>
 		<li class="active" ><a href="#">Serial</a></li>
@@ -31,25 +31,25 @@
 
 
 <div class="container">
-  <form class="form-inline">
-    <div class="form-group">
-      <label for="portselector">Serial port:</label>
-      <select class="form-control" id="portselector">
-      </select>
-      <button id="startbtn" class="btn btn-default">Start</button>
-    </div>
-  </form>
 
-  <div class="form-group">
-    <label for="comment">Last 20 lines from serial:</label>
-    <textarea class="form-control" rows="5" id="input"></textarea>
+  <div class="form-group form-inline">
+    <label for="portselector">Serial port:</label>
+    <select class="form-control" id="portselector">
+    </select>
+    <button id="startbtn" class="btn btn-default">Start</button>
   </div>
 
+  <p></p>
+  <div class="form-group">
+    <label for="comment">Last 20 lines from serial:</label>
+    <textarea class="form-control" rows="5" id="input" style="height: 450px"></textarea>
+  </div>
+  <p></p>
   <div class="form-group">
     <label for="sendline">To serial:</label>
     <input type="text" class="form-control" id="sendline">
-    <button id="sendbtn" class="btn btn-default">Send</button>
   </div>
+  <button id="sendbtn" class="btn btn-default">Send</button>
 
 </div>
 
@@ -76,7 +76,7 @@ $(function(){
             $('#startbtn').text("Stop");
           });
         } else {
-          $.post('/serials/current', { }, function(){
+          $.post('/serials/current', { name: '' }, function(){
             $('#startbtn').text("Start");
           });
         }
@@ -89,6 +89,12 @@ $(function(){
             $('#startbtn').text("Stop");
           } else {
             $('#startbtn').text("Start");
+          }
+          if(data.buffer !== undefined){
+            $('#input').val("");
+            $.each(data.buffer, function(index, item) {
+              $('#input').val($('#input').val()+item+'\r\n');
+            });
           }
         });
       }, 1000);
