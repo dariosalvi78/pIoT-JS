@@ -127,20 +127,24 @@ function storeData(obj){
   }
   var content = obj[name];
   content.timestamp = new Date().getTime();
-  if(dbs[name] === undefined){
-    console.log('Creating db for ' + name + ' and a new REST route');
-    dbs[name] = useDatabase(name);
-    app.route('/messages/'+name, serveMessages);
-  }
-  console.log('storing a ' + name +': '+JSON.stringify(content));
-  dbs[name].add(content);
-
-  nodesdb.findOne({ sourceAddress: content.sourceAddress }, function(err, docs){
-    if((docs === null) || (docs.length === 0)){
-      console.log('found a new node, address: '+content.sourceAddress);
-      nodesdb.add({ name : null, location: null, sourceAddress: content.sourceAddress });
+  if(name.toLowerCase() === 'error'){
+    console.log(obj);
+  } else {
+    if(dbs[name] === undefined){
+      console.log('Creating db for ' + name + ' and a new REST route');
+      dbs[name] = useDatabase(name);
+      app.route('/messages/'+name, serveMessages);
     }
-  });
+    console.log('storing a ' + name +': '+JSON.stringify(content));
+    dbs[name].add(content);
+
+    nodesdb.findOne({ sourceAddress: content.sourceAddress }, function(err, docs){
+      if((docs === null) || (docs.length === 0)){
+        console.log('found a new node, address: '+content.sourceAddress);
+        nodesdb.add({ name : null, location: null, sourceAddress: content.sourceAddress });
+      }
+    });
+  }
 }
 
 function serveMessages(request){
