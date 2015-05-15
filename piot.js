@@ -136,7 +136,7 @@ function storeData(obj){
   dbs[name].add(content);
 
   nodesdb.findOne({ sourceAddress: content.sourceAddress }, function(err, docs){
-    if(err !== null){
+    if((docs === null) || (docs.length === 0)){
       console.log('found a new node, address: '+content.sourceAddress);
       nodesdb.add({ name : null, location: null, sourceAddress: content.sourceAddress });
     }
@@ -144,24 +144,53 @@ function storeData(obj){
 }
 
 function serveMessages(request){
+  var skip =0, to=10;
+  if(request.params['from'] !== undefined)
+    skip = request.params['from'];
+  if(request.params['to'] !== undefined)
+    to = request.params['to'];
+
   if(request.path.split('/').length>2){
+    //one datatype specified
     var dataname = request.path.split('/')[2];
 
     dataname = dataname.slice(0, dataname.lastIndexOf('?'));
-    var skip =0, to=10;
-    if(request.params['from'] !== undefined)
-      skip = request.params['from'];
-    if(request.params['to'] !== undefined)
-      to = request.params['to'];
 
     dbs[dataname].find({}).sort({ timestamp: -1 }).skip(skip).limit(to).exec(function(err, docs){
       request.header("application/json");
       request.respond(JSON.stringify(docs));
     });
   } else {
-    
+    //all datatypes
+    var ret = [];
+    var merge = function(left, right){
+      var result  = [], il = 0, ir = 0;
+      while (il < left.length && ir < right.length){
+        if (left[il].timestamp > right[ir].timestamp){
+          result.push(left[il++]);
+        } else {
+          result.push(right[ir++]);
+        }
+      }
+      return result.concat(left.slice(il)).concat(right.slice(ir));
+    }
+    var iterate = function(idxs){
+      if(idxs.length === 0){
+        request.header("application/json");
+        request.respond(JSON.stringify(ret.slice(skip, to)));
+      } else {
+        var idx = idxs.pop();
+        dbs[idx].find({}).sort({ timestamp: -1 }).limit(to).exec(function(err, docs){
+          //TODO: this is inefficient, we should skip some elements, the problem is: how many?
+          ret = merge(ret, docs);
+          iterate(idxs);
+        });
+      }
+    };
+    iterate(Object.keys(dbs));
   }
 }
+
 
 function serveMessagetypes(request){
   var re = [];
