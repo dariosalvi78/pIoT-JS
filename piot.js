@@ -157,12 +157,17 @@ function serveMessages(request){
   if(request.path.split('/').length>2){
     //one datatype specified
     var dataname = request.path.split('/')[2];
-
     dataname = dataname.slice(0, dataname.lastIndexOf('?'));
 
     dbs[dataname].find({}).sort({ timestamp: -1 }).skip(skip).limit(to).exec(function(err, docs){
+      //add dataname
+      var rr =[];
+      for(var i= 0; i<docs.length; i++){
+        rr[i] = {};
+        rr[i][dataname] = docs[i];
+      }
       request.header("application/json");
-      request.respond(JSON.stringify(docs));
+      request.respond(JSON.stringify(rr));
     });
   } else {
     //all datatypes
@@ -170,23 +175,34 @@ function serveMessages(request){
     var merge = function(left, right){
       var result  = [], il = 0, ir = 0;
       while (il < left.length && ir < right.length){
-        if (left[il].timestamp > right[ir].timestamp){
-          result.push(left[il++]);
+        var ll = left[il];
+        var rr = right[ir];
+        if (ll[Object.keys(ll)[0]].timestamp > rr[[Object.keys(rr)[0]]].timestamp){
+          result.push(ll);
+          il++;
         } else {
-          result.push(right[ir++]);
+          result.push(rr);
+          ir++;
         }
       }
       return result.concat(left.slice(il)).concat(right.slice(ir));
     }
     var iterate = function(idxs){
       if(idxs.length === 0){
+        ret = ret.slice(skip, to);
         request.header("application/json");
-        request.respond(JSON.stringify(ret.slice(skip, to)));
+        request.respond(JSON.stringify(ret));
       } else {
         var idx = idxs.pop();
+        //TODO: this is inefficient, we should skip some elements, the problem is: how many?
         dbs[idx].find({}).sort({ timestamp: -1 }).limit(to).exec(function(err, docs){
-          //TODO: this is inefficient, we should skip some elements, the problem is: how many?
-          ret = merge(ret, docs);
+          //add dataname
+          var dd = [];
+          for(var i= 0; i<docs.length; i++){
+            dd[i] = {};
+            dd[i][idx] = docs[i];
+          }
+          ret = merge(ret, dd);
           iterate(idxs);
         });
       }

@@ -70,10 +70,10 @@ $(function(){
   });
   $.getJSON( '/nodes' ,null, function(data){
     $.each(data, function(index, item) {
-      var nodeoption = $('<a href="#" class="list-group-item" id="node'+item+'">'+item+'</a>');
+      var nodeoption = $('<a href="#" class="list-group-item" id="node'+item.name+'">'+item.name+'</a>');
       nodeoption.click(function(){
         nodeoption.siblings().removeClass('active');
-        nodeoption.addclass('active');
+        nodeoption.addClass('active');
         selectednode = item;
         refreshContent();
       });
@@ -116,62 +116,80 @@ $(function(){
         to : 10
       }, function(data){
         $.each(data, function(index, item) {
-          renderMessage(selectedmessagetype, item);
+          renderMessage(item);
         });
       });
     };
 
-  refreshContent();
-
-  var renderMessage = function(name, m){
+  var renderMessage = function(m){
     if(m === null)
       return;
+    var name;
+    for(var member in m){
+        name = member;
+    }
+    var panel = getPanel(name, m[name], m[name]._id);
+    $('#messages').append(panel);
+  };
+
+  var getPanel = function(name, m, id, btns){
     var panel =$('<div class="panel panel-default"></div>');
     panel.append($('<div class="panel-heading">'+name+'</div>'));
     var body = $('<div class="panel-body"></div>');
     panel.append(body);
 
-    var tsgrp = $('<div class="form-group"></div>');
-    tsgrp.append($('<label for="ts_'+m._id+'">timestamp</label>'));
-    var ts = new Date(m.timestamp);
-    tsgrp.append($('<input type="datetime-local" class="form-control" value="'+ts.toJSON().slice(0,19)+'" id="ts_'+m._id+'">'));
-    body.append(tsgrp);
-
-    var srcgrp = $('<div class="form-group"></div>');
-    srcgrp.append($('<label for="src_'+m._id+'">source address</label>'));
-    srcgrp.append($('<input type="number" class="form-control" value="'+m.sourceAddress+'" id="src_'+m._id+'">'));
-    body.append(srcgrp);
+    if(m.timestamp !== undefined){
+      var tsgrp = $('<div class="form-group"></div>');
+      tsgrp.append($('<label for="ts_'+id+'">timestamp</label>'));
+      var ts = new Date(m.timestamp);
+      tsgrp.append($('<input type="datetime-local" class="form-control" value="'+ts.toJSON().slice(0,19)+'" id="ts_'+id+'">'));
+      body.append(tsgrp);
+    }
+    if(m.sourceAddress != undefined){
+      var srcgrp = $('<div class="form-group"></div>');
+      srcgrp.append($('<label for="src_'+id+'">source address</label>'));
+      srcgrp.append($('<input type="number" class="form-control" value="'+m.sourceAddress+'" id="src_'+id+'">'));
+      body.append(srcgrp);
+    }
 
     for (var prop in m){
       if((prop === 'timestamp') || (prop === '_id') || (prop === 'sourceAddress')){
         //skip this
       } else if(typeof m[prop] === 'number'){
         var formgroup = $('<div class="form-group"></div>');
-        formgroup.append($('<label for="'+prop+'_'+m._id+'">'+prop+'</label>'));
-        formgroup.append($('<input type="number" class="form-control" value="'+m[prop]+'" id="'+prop+'_'+m._id+'">'));
+        formgroup.append($('<label for="'+prop+'_'+id+'">'+prop+'</label>'));
+        formgroup.append($('<input type="number" class="form-control" value="'+m[prop]+'" id="'+prop+'_'+id+'">'));
         body.append(formgroup);
       } else if(typeof m[prop] === 'string'){
         var formgroup = $('<div class="form-group"></div>');
-        formgroup.append($('<label for="'+prop+'_'+m._id+'">'+prop+'</label>'));
-        formgroup.append($('<input type="text" class="form-control" value="'+m[prop]+'" id="'+prop+'_'+m._id+'">'));
+        formgroup.append($('<label for="'+prop+'_'+id+'">'+prop+'</label>'));
+        formgroup.append($('<input type="text" class="form-control" value="'+m[prop]+'" id="'+prop+'_'+id+'">'));
         body.append(formgroup);
       } else if(typeof m[prop] === 'boolean'){
         var checkbox = $('<div class="checkbox"></div>');
-        checkbox.append($('<label><input type="checkbox" id="'+prop+'_'+m._id+'">'+prop+'</label>'));
+        checkbox.append($('<label><input type="checkbox" id="'+prop+'_'+id+'">'+prop+'</label>'));
         body.append(checkbox);
       } else if(typeof m[prop] === 'object'){
-        var collapsible = $('<p data-toggle="collapse" data-target="#'+prop+'_'+m._id+'"><strong>'+prop+'</strong></p>');
+        var collapsible = $('<p data-toggle="collapse" data-target="#'+prop+'_'+id+'"><strong>'+prop+'</strong></p>');
         body.append(collapsible);
-        var obj = $('<div  id="'+prop+'_'+m._id+'" class="collapse"></div>');
-        obj.append(renderMessage(prop, m[prop]));
+        var obj = $('<div  id="'+prop+'_'+id+'" class="collapse"></div>');
+        body.append(obj);
+        obj.append(getPanel(prop, m[prop], prop+'_'+id));
       }
     }
-    var savebtn = $('<button type="button" class="btn btn-default">Save</button>')
-    body.append(savebtn);
-    var deletebtn = $('<button type="button" class="btn btn-default">Delete</button>')
-    body.append(deletebtn);
-    $('#messages').append(panel);
-  };
+    if((btns != undefined) || (btns != null)){
+      var savebtn = $('<button type="button" class="btn btn-default">Save</button>')
+      body.append(savebtn);
+      var deletebtn = $('<button type="button" class="btn btn-default">Delete</button>')
+      body.append(deletebtn);
+    }
+    return panel;
+  }
+
+
+
+  refreshContent();
+
 });
 </script>
 </body>
