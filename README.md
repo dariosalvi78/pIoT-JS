@@ -5,3 +5,4 @@ pico/personal Internet of Things, javascript server to be run with node.js
 
 - serialport (npm install serialport)
 - servi (npm install servi)
+- winston (npm install winston)

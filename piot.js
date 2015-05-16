@@ -2,6 +2,12 @@
 var serialport = require("serialport");
 var servi = require('servi');
 var files = require('fs');
+var logger = require('winston');
+
+logger.add(logger.transports.File, { filename: 'logfile.log' });
+logger.handleExceptions();
+logger.exitOnError = false;
+
 
 var SerialPort = serialport.SerialPort;
 var currentPort = null;
@@ -18,6 +24,7 @@ app.port(9090);
 app.serveFiles("html");     // serve static HTML from public folder
 app.route('/serials', listserials);
 app.route('/serials/current', serveserial);
+app.route('/logs', serveLogs);
 
 app.route('/messagetypes', serveMessagetypes);
 app.route('/nodes', serveNodes);
@@ -29,7 +36,7 @@ function listserials(request) {
     if(ports !== null){
       ports.every(function(port, index, array) {
         resp.push(port.comName);
-        console.log("found port: "+port.comName);
+        logger.info("found port: "+port.comName);
       });
     }
     request.header("application/json");
@@ -54,10 +61,10 @@ function serveserial(request) {
     }
 
     if((request.fields['sendline'] !== undefined) && (currentPort !== null)){
-       console.log("sending data to serial: "+request.fields['sendline']);
-       currentPort.write(request.fields['sendline']);
-       resp.name = currentPort.path;
-       resp.buffer = serialBuffer;
+      logger.log('debug', "sending data to serial: "+request.fields['sendline']);
+      currentPort.write(request.fields['sendline']);
+      resp.name = currentPort.path;
+      resp.buffer = serialBuffer;
     }
   }
 
@@ -66,32 +73,31 @@ function serveserial(request) {
 }
 
 function startSerial(name){
-  console.log("opening "+name);
+  logger.info("opening port "+name);
   currentPort = new SerialPort(name, {
      baudRate: 57600,
      // look for return and newline at the end of each data packet:
      parser: serialport.parsers.readline("\r\n")
    });
    currentPort.on('open', function() {
-     console.log(name+' open');
+     logger.info(name+' open');
    });
    currentPort.on('data', function(data) {
-      console.log('Got data on '+currentPort.path+' '+ data);
+     logger.log('debug', 'got data on '+currentPort.path+' '+ data);
       if(serialBuffer.length > 20)
         serialBuffer.shift();
       serialBuffer.push(data);
       try{
         storeData(JSON.parse(data));
       } catch(e) {
-        console.log('cannot parse '+data+' : '+e.message);
+        logger.error('cannot parse '+data, e);
       }
-
    });
    currentPort.on('close', function() {
-      console.log('Serial port closed');
+     logger.info('serial port closed');
    });
    currentPort.on('error', function(error) {
-      console.log('Serial port error: ' + error);
+     logger.error('serial port error', error);
    });
 }
 
@@ -100,6 +106,18 @@ function stopSerial(){
     currentPort.close();
     currentPort = null;
   }
+}
+
+function serveLogs(request){
+  logger.query({}, function (err, results) {
+    if (err) {
+      request.header("application/json");
+      request.respond(JSON.stringify(err));
+    } else {
+      request.header("application/json");
+      request.respond(JSON.stringify(results));
+    }
+  });
 }
 
 function initDBs(){
@@ -111,7 +129,7 @@ function initDBs(){
     var ext = filename.split('.').pop();
     var pre = filename.substring(0,filename.lastIndexOf('.'));
     if(ext.toLowerCase() === 'db'){
-      console.log('loading DB '+filename);
+      logger.info('loading DB '+filename);
       if(pre !== 'nodesdb'){
         dbs[pre] = useDatabase(pre);
         app.route('/messages/'+pre, serveMessages);
@@ -128,19 +146,19 @@ function storeData(obj){
   var content = obj[name];
   content.timestamp = new Date().getTime();
   if(name.toLowerCase() === 'error'){
-    console.log(obj);
+    logger.error('error from base', obj);
   } else {
     if(dbs[name] === undefined){
-      console.log('Creating db for ' + name + ' and a new REST route');
+      logger.info('creating db for ' + name + ' and a new REST route');
       dbs[name] = useDatabase(name);
       app.route('/messages/'+name, serveMessages);
     }
-    console.log('storing a ' + name +': '+JSON.stringify(content));
+    logger.log('debug', 'storing a ' + name, content);
     dbs[name].add(content);
 
     nodesdb.findOne({ sourceAddress: content.sourceAddress }, function(err, docs){
       if((docs === null) || (docs.length === 0)){
-        console.log('found a new node, address: '+content.sourceAddress);
+        logger.info('found a new node, address: '+content.sourceAddress);
         nodesdb.add({ name : null, location: null, sourceAddress: content.sourceAddress });
       }
     });

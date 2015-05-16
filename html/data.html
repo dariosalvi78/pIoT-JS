@@ -22,8 +22,8 @@
         <li class="active"><a href="#">Data</a></li>
         <li><a href="#">Actions</a></li>
         <li><a href="#">Rules</a></li>
-		<li><a href="serial.html">Serial</a></li>
-		<li><a href="#">Logs</a></li>
+        <li><a href="serial.html">Serial</a></li>
+        <li><a href="log.html">Log</a></li>
       </ul>
     </div>
   </div>
@@ -128,7 +128,7 @@ $(function(){
     for(var member in m){
         name = member;
     }
-    var panel = getPanel(name, m[name], m[name]._id);
+    var panel = getPanel(name, m[name], m[name]._id, true);
     $('#messages').append(panel);
   };
 
