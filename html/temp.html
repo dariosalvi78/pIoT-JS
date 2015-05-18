@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+  <meta charset='utf-8' />
+  <title>pIoT Thermometer </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+  <div>
+    <canvas id='thermometer' width='200' height='900'></canvas>
+  </div>
+
+  <p>Temperature got at </p>
+  <script>
+  $(function(){
+    var canvas = document.getElementById('thermometer');
+    img = new Image();
+
+    if (canvas.getContext) {
+      img.onload = function imgOnLoaded() {
+        $.getJSON('messages/garden' ,{
+            skip : 0,
+            limit : 1
+          }, function(data){
+            var temp = data[0].garden.temperature;
+            if (temp > 50)
+              temp = 50;
+            else if (temp < -30)
+              temp = -30;
+            ctx = canvas.getContext('2d');
+            ratio = getRatio(temp);
+            iTempToYCoord = convertTempToScreenCoord(ratio, temp);
+
+            // Draw the loaded image onto the canvas
+            ctx.drawImage(img, 0, 0);
+            // Draw the liquid level
+            drawLiquid(ctx, iTempToYCoord);
+          });
+      };
+      // Load the image
+      img.src = 'thermometer-template.png';
+    }
+
+  });
+
+  /* The image is not in proportion this the gauge to pixel
+  * ratio need slight adjustment
+  */
+  function getRatio(iTemp) {
+    var iRatio;
+
+    if (iTemp > 0) {
+      iRatio = 7.1;
+    } else if (iTemp <= 0) {
+      iRatio = 6.9;
+    } else if (iTemp < -20) {
+      iRatio = 6.77;
+    }
+
+    return iRatio;
+  }
+
+  /* Algorithm to convert the temperature to the correct x screen coord.
+  * Odd, but works!
+  */
+  function convertTempToScreenCoord(iRatio, iTemp) {
+    var iMAX_TEMP = 50,
+    iSTART_Y_POS = 147;
+
+    return iSTART_Y_POS + (iRatio * (iMAX_TEMP - iTemp));
+  }
+
+  /* Draw red rectangle to represent the fluid in the glass tube
+  * Coordinates you Y and are fixed!
+  * TODO: Calculare Y coord base on image X,Y
+  */
+  function drawLiquid(ctx, iTempToYCoord) {
+    var iX_POS = 111,
+    iY_POS = 7,
+    iY_OFFSET = 686,
+    iWIDTH = 35;
+
+    ctx.fillStyle = "rgb(200,0,0)";
+
+    // Draw rectangle from -30 to iTempToYCoord
+    ctx.fillRect(iX_POS, iTempToYCoord, iY_POS, iY_OFFSET - iTempToYCoord);
+
+    // Draw rectangle from botton to -30
+    ctx.fillRect(iX_POS, iY_OFFSET, iY_POS, iWIDTH);
+
+    ctx.stroke();
+  }
+  </script>
+</body>
+</html>

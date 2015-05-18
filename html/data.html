@@ -48,17 +48,21 @@
     <div class="col-sm-9">
       <p class="lead">Messages:</p>
       <div class="panel-group" id="messages"></div>
-    </div>
-
       <ul class="pager">
-        <li class="previous"><a href="#">Previous</a></li>
-        <li class="next"><a href="#">Next</a></li>
+        <li class="previous" id="previous"><a href="#">Previous</a></li>
+        <li class="next" id="next"><a href="#">Next</a></li>
       </ul>
+    </div>
     </div>
   </div>
 
 <script>
 $(function(){
+  var limit = 10;
+  var skip = 0;
+
+  $('#previous').click(function(){ skip -= limit; refreshContent(); });
+  $('#next').click(function(){ skip += limit; refreshContent(); });
 
   //nodes list
   var selectednode = null;
@@ -112,8 +116,8 @@ $(function(){
     if(selectedmessagetype != null)
       path+= '/'+selectedmessagetype;
     $.getJSON(path ,{
-        from : 0,
-        to : 10
+        skip : skip,
+        limit : limit
       }, function(data){
         $.each(data, function(index, item) {
           renderMessage(item);

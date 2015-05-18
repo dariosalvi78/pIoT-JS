@@ -7,7 +7,7 @@ var logger = require('winston');
 logger.add(logger.transports.File, { filename: 'logfile.log' });
 logger.handleExceptions();
 logger.exitOnError = false;
-
+logger.info('starting piot node server');
 
 var SerialPort = serialport.SerialPort;
 var currentPort = null;
@@ -166,18 +166,18 @@ function storeData(obj){
 }
 
 function serveMessages(request){
-  var skip =0, to=10;
-  if(request.params['from'] !== undefined)
-    skip = request.params['from'];
-  if(request.params['to'] !== undefined)
-    to = request.params['to'];
+  var skip =0, limit=10;
+  if(request.params['skip'] !== undefined)
+    skip = request.params['skip'];
+  if(request.params['limit'] !== undefined)
+    limit = request.params['limit'];
 
   if(request.path.split('/').length>2){
     //one datatype specified
     var dataname = request.path.split('/')[2];
     dataname = dataname.slice(0, dataname.lastIndexOf('?'));
 
-    dbs[dataname].find({}).sort({ timestamp: -1 }).skip(skip).limit(to).exec(function(err, docs){
+    dbs[dataname].find({}).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
       //add dataname
       var rr =[];
       for(var i= 0; i<docs.length; i++){
@@ -213,7 +213,7 @@ function serveMessages(request){
       } else {
         var idx = idxs.pop();
         //TODO: this is inefficient, we should skip some elements, the problem is: how many?
-        dbs[idx].find({}).sort({ timestamp: -1 }).limit(to).exec(function(err, docs){
+        dbs[idx].find({}).sort({ timestamp: -1 }).limit(skip * limit).exec(function(err, docs){
           //add dataname
           var dd = [];
           for(var i= 0; i<docs.length; i++){
@@ -257,6 +257,7 @@ function serveNodes(request){
     request.respond(JSON.stringify(data));
   });
 }
+
 
 initDBs();
 app.start();
