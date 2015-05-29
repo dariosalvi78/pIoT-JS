@@ -109,7 +109,14 @@ function stopSerial(){
 }
 
 function serveLogs(request){
-  logger.query({}, function (err, results) {
+
+  logger.query({
+    from: new Date - 24 * 60 * 60 * 1000,
+    until: new Date,
+    limit: 100,
+    start: 0,
+    order: 'desc',
+  }, function (err, results) {
     if (err) {
       request.header("application/json");
       request.respond(JSON.stringify(err));
@@ -207,7 +214,7 @@ function serveMessages(request){
     }
     var iterate = function(idxs){
       if(idxs.length === 0){
-        ret = ret.slice(skip, to);
+        ret = ret.slice(skip, limit);
         request.header("application/json");
         request.respond(JSON.stringify(ret));
       } else {
@@ -221,6 +228,7 @@ function serveMessages(request){
             dd[i][idx] = docs[i];
           }
           ret = merge(ret, dd);
+
           iterate(idxs);
         });
       }

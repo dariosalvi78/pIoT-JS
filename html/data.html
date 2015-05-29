@@ -14,7 +14,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="https://github.com/dariosalvi78/pIoT">
-	  <img src="http://openclipart.org/people/Scout/Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
+	  <img src="Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
@@ -32,7 +32,6 @@
 
 <div class="container">
 
-
   <div class="row">
     <div class="col-sm-3">
       <p class="lead">Node:</p>
@@ -49,8 +48,8 @@
       <p class="lead">Messages:</p>
       <div class="panel-group" id="messages"></div>
       <ul class="pager">
-        <li class="previous" id="previous"><a href="#">Previous</a></li>
-        <li class="next" id="next"><a href="#">Next</a></li>
+        <li class="previous" id="previous"><a href="#" id="prev">Previous</a></li>
+        <li class="next" id="next"><a href="#" id="next">Next</a></li>
       </ul>
     </div>
     </div>
@@ -60,9 +59,7 @@
 $(function(){
   var limit = 10;
   var skip = 0;
-
-  $('#previous').click(function(){ skip -= limit; refreshContent(); });
-  $('#next').click(function(){ skip += limit; refreshContent(); });
+  var counters = [];
 
   //nodes list
   var selectednode = null;
@@ -70,15 +67,17 @@ $(function(){
     $('#allnodes').siblings().removeClass('active');
     $('#allnodes').addClass('active');
     selectednode = null;
+    skip = 0; limit = 10;
     refreshContent();
   });
   $.getJSON( '/nodes' ,null, function(data){
     $.each(data, function(index, item) {
-      var nodeoption = $('<a href="#" class="list-group-item" id="node'+item.name+'">'+item.name+'</a>');
+      var nodeoption = $('<a href="#" class="list-group-item" id="node'+item.sourceAddress+'">'+item.sourceAddress+'</a>');
       nodeoption.click(function(){
         nodeoption.siblings().removeClass('active');
         nodeoption.addClass('active');
         selectednode = item;
+        skip = 0; limit = 10;
         refreshContent();
       });
       $('#nodeslist').append(nodeoption);
@@ -91,18 +90,22 @@ $(function(){
     $('#alldatatypes').siblings().removeClass('active');
     $('#alldatatypes').addClass('active');
     selectedmessagetype = null;
+    skip = 0; limit = 10;
     refreshContent();
   });
   $.getJSON( '/messagetypes' ,null, function(data){
     $.each(data, function(index, item) {
       if(item.name == 'all'){
+        counters['all'] = item.count;
         $('#alldatatypescount').text(item.count);
       } else {
         var dataoption= $('<a href="#" class="list-group-item">'+item.name+' <span class="badge">'+item.count+'</span></a>');
+        counters[item.name] = item.count;
         dataoption.click(function(){
           dataoption.siblings().removeClass('active');
           dataoption.addClass('active');
           selectedmessagetype = item.name;
+          skip = 0; limit = 10;
           refreshContent();
         });
         $('#datatypeslist').append(dataoption);
@@ -119,6 +122,18 @@ $(function(){
         skip : skip,
         limit : limit
       }, function(data){
+        if(skip <=0) $('#previous').hide();
+        else $('#previous').show();
+        $('#previous').click(function(){ skip -= limit; refreshContent(); });
+        if(selectedmessagetype){
+          if((skip+limit) >= counters[selectedmessagetype]) $('#next').hide();
+          else $('#next').show();
+        } else {
+          if((skip+limit) >= counters['all']) $('#next').hide();
+          else $('#next').show();
+        }
+        $('#next').click(function(){ skip += limit; refreshContent(); });
+
         $.each(data, function(index, item) {
           renderMessage(item);
         });
@@ -174,7 +189,7 @@ $(function(){
         checkbox.append($('<label><input type="checkbox" id="'+prop+'_'+id+'">'+prop+'</label>'));
         body.append(checkbox);
       } else if(typeof m[prop] === 'object'){
-        var collapsible = $('<p data-toggle="collapse" data-target="#'+prop+'_'+id+'"><strong>'+prop+'</strong></p>');
+        var collapsible = $('<p><a href="#" data-toggle="collapse" data-target="#'+prop+'_'+id+'"><strong>'+prop+'</strong></a></p>');
         body.append(collapsible);
         var obj = $('<div  id="'+prop+'_'+id+'" class="collapse"></div>');
         body.append(obj);
@@ -189,8 +204,6 @@ $(function(){
     }
     return panel;
   }
-
-
 
   refreshContent();
 
