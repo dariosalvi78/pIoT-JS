@@ -11,6 +11,7 @@
   </div>
 
   <p id="temptxt"></p>
+  <p id="detailstxt"></p>
   <script>
   $(function(){
     var canvas = document.getElementById('thermometer');
@@ -36,7 +37,8 @@
             // Draw the liquid level
             drawLiquid(ctx, iTempToYCoord);
             var dt = new Date(data[0].garden.timestamp);
-            $('#temptxt').text('Teperature got '+jQuery.format.prettyDate(dt)+' by node '+data[0].garden.sourceAddress);
+            $('#temptxt').text('Teperature: '+ temp +'C, Humidity: '+data[0].garden.humidity +'%, rain: '+ data[0].garden.rain);
+            $('#detailstxt').text('Data got '+ jQuery.format.prettyDate(dt) +' from node '+ data[0].garden.sourceAddress);
           });
       };
       // Load the image

@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+  <script type="text/javascript" src="http://code.highcharts.com/modules/exporting.js"></script>
 </head>
 <body>
 
@@ -55,6 +57,36 @@
     </div>
   </div>
 
+  <div id="plotModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Plot</h4>
+        </div>
+        <div class="modal-body">
+          <div id="plot" style="min-width: 100px; height: 300px; margin: 0 auto"></div>
+        </div>
+        <div class="modal-footer">
+          <form class="form-inline" role="form">
+            <label for="start">Start <input type="datetime-local" class="form-control" id="start"></label>
+            <label for="end">End <input type="datetime-local" class="form-control" id="end"></label>
+            <button type="button" class="btn btn-small" id="replot">
+              <i class="glyphicon glyphicon-refresh"></i>
+            </button>
+            <button type="button" class="btn btn-small" id="plotbackward">
+              <i class="glyphicon glyphicon-backward"></i>
+            </button>
+            <button type="button" class="btn btn-small" id="plotforward">
+              <i class="glyphicon glyphicon-forward"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 <script>
 $(function(){
   var limit = 10;
@@ -76,7 +108,7 @@ $(function(){
       nodeoption.click(function(){
         nodeoption.siblings().removeClass('active');
         nodeoption.addClass('active');
-        selectednode = item;
+        selectednode = item.sourceAddress;
         skip = 0; limit = 10;
         refreshContent();
       });
@@ -120,7 +152,8 @@ $(function(){
       path+= '/'+selectedmessagetype;
     $.getJSON(path ,{
         skip : skip,
-        limit : limit
+        limit : limit,
+        srcAddr : selectednode
       }, function(data){
         if(skip <=0) $('#previous').hide();
         else $('#previous').show();
@@ -140,6 +173,7 @@ $(function(){
       });
     };
 
+  var plotproperty = null;
   var renderMessage = function(m){
     if(m === null)
       return;
@@ -171,31 +205,39 @@ $(function(){
       body.append(srcgrp);
     }
 
-    for (var prop in m){
+    $.each(m, function(prop, val) {
       if((prop === 'timestamp') || (prop === '_id') || (prop === 'sourceAddress')){
         //skip this
-      } else if(typeof m[prop] === 'number'){
+      } else if(typeof val === 'number'){
         var formgroup = $('<div class="form-group"></div>');
         formgroup.append($('<label for="'+prop+'_'+id+'">'+prop+'</label>'));
-        formgroup.append($('<input type="number" class="form-control" value="'+m[prop]+'" id="'+prop+'_'+id+'">'));
+        var chart = $('<span class="glyphicon glyphicon-stats" style="margin-left: 15px; cursor: pointer;"></span>');
+        chart.click(function(){
+          $('#start').val(new Date(m.timestamp-24*60*60*1000).toJSON().slice(0,19));
+          $('#end').val(new Date(m.timestamp).toJSON().slice(0,19));
+          plotproperty = name+'.'+prop;
+          $('#plotModal').modal('show');
+        });
+        formgroup.append(chart);
+        formgroup.append($('<input type="number" class="form-control" value="'+ val +'" id="'+prop+'_'+id+'">'));
         body.append(formgroup);
-      } else if(typeof m[prop] === 'string'){
+      } else if(typeof val === 'string'){
         var formgroup = $('<div class="form-group"></div>');
         formgroup.append($('<label for="'+prop+'_'+id+'">'+prop+'</label>'));
-        formgroup.append($('<input type="text" class="form-control" value="'+m[prop]+'" id="'+prop+'_'+id+'">'));
+        formgroup.append($('<input type="text" class="form-control" value="'+ val +'" id="'+prop+'_'+id+'">'));
         body.append(formgroup);
-      } else if(typeof m[prop] === 'boolean'){
+      } else if(typeof val === 'boolean'){
         var checkbox = $('<div class="checkbox"></div>');
         checkbox.append($('<label><input type="checkbox" id="'+prop+'_'+id+'">'+prop+'</label>'));
         body.append(checkbox);
-      } else if(typeof m[prop] === 'object'){
-        var collapsible = $('<p><a href="#" data-toggle="collapse" data-target="#'+prop+'_'+id+'"><strong>'+prop+'</strong></a></p>');
+      } else if(typeof val === 'object'){
+        var collapsible = $('<p><a data-toggle="collapse" data-target="#'+prop+'_'+id+'" style="cursor: pointer;"><strong>'+prop+'</strong></a></p>');
         body.append(collapsible);
         var obj = $('<div  id="'+prop+'_'+id+'" class="collapse"></div>');
         body.append(obj);
-        obj.append(getPanel(prop, m[prop], prop+'_'+id));
+        obj.append(getPanel(prop, val, prop+'_'+id));
       }
-    }
+    });
     if((btns != undefined) || (btns != null)){
       var savebtn = $('<button type="button" class="btn btn-default">Save</button>')
       body.append(savebtn);
@@ -206,6 +248,83 @@ $(function(){
   }
 
   refreshContent();
+
+  $('#plotModal').on('shown.bs.modal', function(e){
+    var w = $('.modal-content').width();
+    $('#plot').width(w-20);
+    refreshPlot();
+  });
+  $('#replot').click(function(){
+    refreshPlot();
+  });
+  $('#plotforward').click(function(){
+    var start = new Date($('#start').val()).getTime();
+    var end = new Date($('#end').val()).getTime();
+    var gap = end-start;
+    start += gap;
+    end += gap;
+    $('#start').val(new Date(start).toJSON().slice(0,19));
+    $('#end').val(new Date(end).toJSON().slice(0,19));
+    refreshPlot();
+  });
+  $('#plotbackward').click(function(){
+    var start = new Date($('#start').val()).getTime();
+    var end = new Date($('#end').val()).getTime();
+    var gap = end-start;
+    start -= gap;
+    end -= gap;
+    $('#start').val(new Date(start).toJSON().slice(0,19));
+    $('#end').val(new Date(end).toJSON().slice(0,19));
+    refreshPlot();
+  });
+
+  var now = new Date();
+  $('#start').val(new Date(now-24*60*60*1000).toJSON().slice(0,19));
+  $('#end').val(now.toJSON().slice(0,19));
+
+  var refreshPlot = function(){
+    var path = '/plots/'+plotproperty
+    var start = new Date($('#start').val());
+    var end = new Date($('#end').val());
+    $.getJSON(path ,{
+        start : start.getTime(),
+        end : end.getTime(),
+        srcAddr : selectednode
+      }, function(resp){
+        $('#plot').highcharts({
+          chart: {
+            type: 'spline',
+            zoomType: 'x'
+          },
+          title: {
+            text: plotproperty,
+          },
+          legend: {
+            enabled: false,
+          },
+          xAxis: {
+            type: 'datetime',
+            title: {
+                text: 'Datetime'
+            }
+          },
+          yAxis: {
+            //min: 0,
+          },
+          plotOptions: {
+            spline: {
+                marker: {
+                    enabled: true
+                }
+            }
+        },
+          series: [{
+              name: plotproperty,
+              data: resp,
+          }]
+      });
+    });
+  };
 
 });
 </script>

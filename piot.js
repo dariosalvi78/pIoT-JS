@@ -29,6 +29,7 @@ app.route('/logs', serveLogs);
 app.route('/messagetypes', serveMessagetypes);
 app.route('/nodes', serveNodes);
 app.route('/messages', serveMessages);
+app.route('/plots/:dataname', servePlots);
 
 function listserials(request) {
   var resp = [];
@@ -173,18 +174,27 @@ function storeData(obj){
 }
 
 function serveMessages(request){
-  var skip =0, limit=10;
+  var skip =0, limit=100;
+  var srcAddr = null;
   if(request.params['skip'] !== undefined)
     skip = request.params['skip'];
   if(request.params['limit'] !== undefined)
     limit = request.params['limit'];
+  if((request.params['srcAddr'] !== undefined) &&
+    (request.params['srcAddr'] !== ''))
+    srcAddr = parseInt(request.params['srcAddr']);
+
+  var filter = {};
+  if(srcAddr !== null)
+    filter = { sourceAddress: srcAddr };
 
   if(request.path.split('/').length>2){
     //one datatype specified
     var dataname = request.path.split('/')[2];
-    dataname = dataname.slice(0, dataname.lastIndexOf('?'));
+    if(dataname.lastIndexOf('?') >0)
+      dataname = dataname.slice(0, dataname.lastIndexOf('?'));
 
-    dbs[dataname].find({}).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
+    dbs[dataname].find(filter).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
       //add dataname
       var rr =[];
       for(var i= 0; i<docs.length; i++){
@@ -220,7 +230,7 @@ function serveMessages(request){
       } else {
         var idx = idxs.pop();
         //TODO: this is inefficient, we should skip some elements, the problem is: how many?
-        dbs[idx].find({}).sort({ timestamp: -1 }).limit(skip * limit).exec(function(err, docs){
+        dbs[idx].find(filter).sort({ timestamp: -1 }).limit(skip * limit).exec(function(err, docs){
           //add dataname
           var dd = [];
           for(var i= 0; i<docs.length; i++){
@@ -235,6 +245,36 @@ function serveMessages(request){
     };
     iterate(Object.keys(dbs));
   }
+}
+
+function servePlots(request){
+  var end = new Date().getTime();//default value
+  var start = new Date(end-24*60*60*1000).getTime();//default value
+  var srcAddr = null;
+  if(request.params['start'] !== undefined)
+    start = parseInt(request.params['start']);
+  if(request.params['end'] !== undefined)
+    end = parseInt(request.params['end']);
+  if((request.params['srcAddr'] !== undefined) &&
+    (request.params['srcAddr'] !== ''))
+    srcAddr = parseInt(request.params['srcAddr']);
+
+  var filter = { timestamp: { $lte: end, $gte: start } };
+  if(srcAddr !== null)
+    filter.sourceAddress = srcAddr;
+
+  var dataname = request.params.dataname.split('.')[0];
+  var property = request.params.dataname.split('.')[1];
+
+  dbs[dataname].find(filter).sort({ timestamp: -1 }).exec(function(err, docs){
+    var ret =[];
+
+    for(var i= 0; i<docs.length; i++){
+      ret.unshift([docs[i].timestamp, docs[i][property]]);
+    }
+    request.header("application/json");
+    request.respond(JSON.stringify(ret));
+  });
 }
 
 
