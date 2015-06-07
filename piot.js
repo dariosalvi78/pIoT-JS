@@ -7,7 +7,6 @@ var logger = require('winston');
 logger.add(logger.transports.File, { filename: 'logfile.log' });
 logger.handleExceptions();
 logger.exitOnError = false;
-logger.info('starting piot node server');
 
 var SerialPort = serialport.SerialPort;
 var currentPort = null;
@@ -110,7 +109,6 @@ function stopSerial(){
 }
 
 function serveLogs(request){
-
   logger.query({
     from: new Date - 24 * 60 * 60 * 1000,
     until: new Date,
@@ -120,7 +118,7 @@ function serveLogs(request){
   }, function (err, results) {
     if (err) {
       request.header("application/json");
-      request.respond(JSON.stringify(err));
+      request.respond('Error: '+JSON.stringify(err));
     } else {
       request.header("application/json");
       request.respond(JSON.stringify(results));
@@ -129,7 +127,14 @@ function serveLogs(request){
 }
 
 function initDBs(){
+  logger.info('loading nodes DB');
   nodesdb = useDatabase('nodesdb');
+  nodesdb.getAll(function(nodes){
+    for(var i=0; i<nodes.length; i++){
+      var route = '/nodes/'+nodes[i].sourceAddress;
+      app.route(route, serveNodes);
+    }
+  });
 
   var names = files.readdirSync('./');
   for(var i in names){
@@ -154,7 +159,7 @@ function storeData(obj){
   var content = obj[name];
   content.timestamp = new Date().getTime();
   if(name.toLowerCase() === 'error'){
-    logger.error('error from base', obj);
+    logger.error('error from base node', obj);
   } else {
     if(dbs[name] === undefined){
       logger.info('creating db for ' + name + ' and a new REST route');
@@ -300,12 +305,27 @@ function serveMessagetypes(request){
 }
 
 function serveNodes(request){
-  nodesdb.getAll(function(data){
-    request.header("application/json");
-    request.respond(JSON.stringify(data));
-  });
+  if(request.method.toLowerCase() == "get"){
+    nodesdb.getAll(function(data){
+      request.header("application/json");
+      request.respond(JSON.stringify(data));
+    });
+  } else if(request.method.toLowerCase() == "post"){
+    var srcAddr = request.path.split('/')[2];
+    logger.info('updating node ' + srcAddr+', ' + JSON.stringify(request.fields));
+    nodesdb.update({ sourceAddress: srcAddr }, request.fields, {}, function(err, numReplaced, newDoc){
+      if(err){
+        request.header("application/json");
+        request.respond(JSON.stringify(err));
+      } else {
+        request.header("application/json");
+        request.respond(JSON.stringify(request.fields));
+      }
+    });
+  }
 }
 
 
+logger.info('starting piot node server');
 initDBs();
 app.start();

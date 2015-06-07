@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>pIoT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://github.com/dariosalvi78/pIoT">
+	  <img src="Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Dashboard</a></li>
+        <li class="active"><a href="#">Nodes</a></li>
+        <li><a href="data.html">Data</a></li>
+        <li><a href="#">Actions</a></li>
+        <li><a href="#">Rules</a></li>
+        <li><a href="serial.html">Serial</a></li>
+        <li><a href="log.html">Log</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <p class="lead">Active nodes:</p>
+  <div id="nodes"></div>
+</div>
+
+<script>
+$(function(){
+
+  var refresh = function(){
+    $('#nodes').empty();
+    $.getJSON( '/nodes' , null, function(data){
+      $.each(data, function(index, item) {
+        var panel =$('<div class="panel panel-default"></div>');
+        panel.append($('<div class="panel-heading">Node '+item.sourceAddress+'</div>'));
+        var body = $('<div class="panel-body"></div>');
+        panel.append(body);
+
+        var srcgrp = $('<div class="form-group"></div>');
+        srcgrp.append($('<label for="src_'+item._id+'">source address</label>'));
+        srcgrp.append($('<input type="number" class="form-control" value="'+item.sourceAddress+'" id="src_'+item._id+'" readonly>'));
+        body.append(srcgrp);
+
+        var namegrp = $('<div class="form-group"></div>');
+        namegrp.append($('<label for="name_'+item._id+'">name</label>'));
+        var name = $('<input type="text" class="form-control" value="'+item.name+'" id="name_'+item._id+'">');
+        namegrp.append(name);
+        body.append(namegrp);
+
+        var locgrp = $('<div class="form-group"></div>');
+        locgrp.append($('<label for="loc_'+item._id+'">location</label>'));
+        var location = $('<input type="text" class="form-control" value="'+item.location+'" id="loc_'+item._id+'">');
+        locgrp.append(location);
+        body.append(locgrp);
+
+        var savebtn = $('<button type="button" class="btn btn-default">Save</button>');
+        savebtn.click(function(){
+          item.name = name.val();
+          item.location = location.val();
+          $.post('/nodes/'+item.sourceAddress, item, function(){
+            refresh();
+          });
+        });
+        body.append(savebtn);
+
+        $('#nodes').append(panel);
+      });
+    });
+  };
+
+  refresh();
+});
+</script>
+
+</body>
+</html>

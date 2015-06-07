@@ -21,6 +21,7 @@
     <div>
       <ul class="nav navbar-nav">
         <li><a href="index.html">Dashboard</a></li>
+        <li><a href="nodes.html">Nodes</a></li>
         <li class="active"><a href="#">Data</a></li>
         <li><a href="#">Actions</a></li>
         <li><a href="#">Rules</a></li>
@@ -195,13 +196,13 @@ $(function(){
       var tsgrp = $('<div class="form-group"></div>');
       tsgrp.append($('<label for="ts_'+id+'">timestamp</label>'));
       var ts = new Date(m.timestamp);
-      tsgrp.append($('<input type="datetime-local" class="form-control" value="'+ts.toJSON().slice(0,19)+'" id="ts_'+id+'">'));
+      tsgrp.append($('<input type="datetime-local" class="form-control" value="'+ts.toJSON().slice(0,19)+'" id="ts_'+id+'" readonly>'));
       body.append(tsgrp);
     }
     if(m.sourceAddress != undefined){
       var srcgrp = $('<div class="form-group"></div>');
       srcgrp.append($('<label for="src_'+id+'">source address</label>'));
-      srcgrp.append($('<input type="number" class="form-control" value="'+m.sourceAddress+'" id="src_'+id+'">'));
+      srcgrp.append($('<input type="number" class="form-control" value="'+m.sourceAddress+'" id="src_'+id+'" readonly>'));
       body.append(srcgrp);
     }
 
