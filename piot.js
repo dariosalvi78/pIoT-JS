@@ -90,14 +90,14 @@ function startSerial(name){
       try{
         storeData(JSON.parse(data));
       } catch(e) {
-        logger.error('cannot parse '+data, e);
+        logger.error('cannot parse '+data+': '+JSON.stringify(e));
       }
    });
    currentPort.on('close', function() {
      logger.info('serial port closed');
    });
    currentPort.on('error', function(error) {
-     logger.error('serial port error', error);
+     logger.error('serial port error: '+JSON.stringify(error));
    });
 }
 
@@ -131,7 +131,7 @@ function initDBs(){
   nodesdb = useDatabase('nodesdb');
   nodesdb.getAll(function(nodes){
     for(var i=0; i<nodes.length; i++){
-      var route = '/nodes/'+nodes[i].sourceAddress;
+      var route = '/nodes/'+nodes[i].address;
       app.route(route, serveNodes);
     }
   });
@@ -146,6 +146,7 @@ function initDBs(){
       if(pre !== 'nodesdb'){
         dbs[pre] = useDatabase(pre);
         app.route('/messages/'+pre, serveMessages);
+        app.route('/messages/'+pre+'/:id', serveMessages);
       }
     }
   }
@@ -159,96 +160,109 @@ function storeData(obj){
   var content = obj[name];
   content.timestamp = new Date().getTime();
   if(name.toLowerCase() === 'error'){
-    logger.error('error from base node', obj);
+    logger.error('error from base node: '+JSON.stringify(obj));
   } else {
     if(dbs[name] === undefined){
       logger.info('creating db for ' + name + ' and a new REST route');
       dbs[name] = useDatabase(name);
       app.route('/messages/'+name, serveMessages);
+      app.route('/messages/'+name+'/:id', serveMessages);
     }
     logger.log('debug', 'storing a ' + name, content);
     dbs[name].add(content);
 
-    nodesdb.findOne({ sourceAddress: content.sourceAddress }, function(err, docs){
+    nodesdb.findOne({ address: content.sourceAddress }, function(err, docs){
       if((docs === null) || (docs.length === 0)){
         logger.info('found a new node, address: '+content.sourceAddress);
-        nodesdb.add({ name : null, location: null, sourceAddress: content.sourceAddress });
+        nodesdb.add({ name : null, location: null, address: content.sourceAddress });
       }
     });
   }
 }
 
 function serveMessages(request){
-  var skip =0, limit=100;
-  var srcAddr = null;
-  if(request.params['skip'] !== undefined)
-    skip = request.params['skip'];
-  if(request.params['limit'] !== undefined)
-    limit = request.params['limit'];
-  if((request.params['srcAddr'] !== undefined) &&
-    (request.params['srcAddr'] !== ''))
-    srcAddr = parseInt(request.params['srcAddr']);
-
-  var filter = {};
-  if(srcAddr !== null)
-    filter = { sourceAddress: srcAddr };
-
-  if(request.path.split('/').length>2){
-    //one datatype specified
+  if(request.method.toLowerCase() == "delete"){
+    var id = request.params.id;
     var dataname = request.path.split('/')[2];
     if(dataname.lastIndexOf('?') >0)
       dataname = dataname.slice(0, dataname.lastIndexOf('?'));
-
-    dbs[dataname].find(filter).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
-      //add dataname
-      var rr =[];
-      for(var i= 0; i<docs.length; i++){
-        rr[i] = {};
-        rr[i][dataname] = docs[i];
-      }
-      request.header("application/json");
-      request.respond(JSON.stringify(rr));
+    logger.info('deleting '+dataname+' id:'+id);
+    dbs[dataname].remove({ _id: id }, {}, function (err, numRemoved) {
+      if(err) request.respond(JSON.stringify(err));
+      else request.respond('OK');
     });
-  } else {
-    //all datatypes
-    var ret = [];
-    var merge = function(left, right){
-      var result  = [], il = 0, ir = 0;
-      while (il < left.length && ir < right.length){
-        var ll = left[il];
-        var rr = right[ir];
-        if (ll[Object.keys(ll)[0]].timestamp > rr[[Object.keys(rr)[0]]].timestamp){
-          result.push(ll);
-          il++;
-        } else {
-          result.push(rr);
-          ir++;
-        }
-      }
-      return result.concat(left.slice(il)).concat(right.slice(ir));
-    }
-    var iterate = function(idxs){
-      if(idxs.length === 0){
-        ret = ret.slice(skip, limit);
-        request.header("application/json");
-        request.respond(JSON.stringify(ret));
-      } else {
-        var idx = idxs.pop();
-        //TODO: this is inefficient, we should skip some elements, the problem is: how many?
-        dbs[idx].find(filter).sort({ timestamp: -1 }).limit(skip * limit).exec(function(err, docs){
-          //add dataname
-          var dd = [];
-          for(var i= 0; i<docs.length; i++){
-            dd[i] = {};
-            dd[i][idx] = docs[i];
-          }
-          ret = merge(ret, dd);
+  } else if(request.method.toLowerCase() == "get"){
+    var skip =0, limit=100;
+    var srcAddr = null;
+    if(request.params['skip'] !== undefined)
+    skip = request.params['skip'];
+    if(request.params['limit'] !== undefined)
+    limit = request.params['limit'];
+    if((request.params['srcAddr'] !== undefined) &&
+    (request.params['srcAddr'] !== ''))
+    srcAddr = parseInt(request.params['srcAddr']);
 
-          iterate(idxs);
-        });
+    var filter = {};
+    if(srcAddr !== null)
+    filter = { sourceAddress: srcAddr };
+
+    if(request.path.split('/').length>2){
+      //one datatype specified
+      var dataname = request.path.split('/')[2];
+      if(dataname.lastIndexOf('?') >0)
+      dataname = dataname.slice(0, dataname.lastIndexOf('?'));
+
+      dbs[dataname].find(filter).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
+        //add dataname
+        var rr =[];
+        for(var i= 0; i<docs.length; i++){
+          rr[i] = {};
+          rr[i][dataname] = docs[i];
+        }
+        request.header("application/json");
+        request.respond(JSON.stringify(rr));
+      });
+    } else {
+      //all datatypes
+      var ret = [];
+      var merge = function(left, right){
+        var result  = [], il = 0, ir = 0;
+        while (il < left.length && ir < right.length){
+          var ll = left[il];
+          var rr = right[ir];
+          if (ll[Object.keys(ll)[0]].timestamp > rr[[Object.keys(rr)[0]]].timestamp){
+            result.push(ll);
+            il++;
+          } else {
+            result.push(rr);
+            ir++;
+          }
+        }
+        return result.concat(left.slice(il)).concat(right.slice(ir));
       }
-    };
-    iterate(Object.keys(dbs));
+      var iterate = function(idxs){
+        if(idxs.length === 0){
+          ret = ret.slice(skip, limit);
+          request.header("application/json");
+          request.respond(JSON.stringify(ret));
+        } else {
+          var idx = idxs.pop();
+          //TODO: this is inefficient, we should skip some elements, the problem is: how many?
+          dbs[idx].find(filter).sort({ timestamp: -1 }).limit(skip * limit).exec(function(err, docs){
+            //add dataname
+            var dd = [];
+            for(var i= 0; i<docs.length; i++){
+              dd[i] = {};
+              dd[i][idx] = docs[i];
+            }
+            ret = merge(ret, dd);
+
+            iterate(idxs);
+          });
+        }
+      };
+      iterate(Object.keys(dbs));
+    }
   }
 }
 
@@ -311,9 +325,10 @@ function serveNodes(request){
       request.respond(JSON.stringify(data));
     });
   } else if(request.method.toLowerCase() == "post"){
-    var srcAddr = request.path.split('/')[2];
-    logger.info('updating node ' + srcAddr+', ' + JSON.stringify(request.fields));
-    nodesdb.update({ sourceAddress: srcAddr }, request.fields, {}, function(err, numReplaced, newDoc){
+    var addr = parseInt(request.path.split('/')[2]);
+    request.fields['address'] = parseInt(request.fields['address']);
+    logger.info('updating node ' + addr+' to ' + JSON.stringify(request.fields));
+    nodesdb.update({ address: addr }, request.fields, {}, function(err, numReplaced, newDoc){
       if(err){
         request.header("application/json");
         request.respond(JSON.stringify(err));

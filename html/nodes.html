@@ -43,14 +43,15 @@ $(function(){
     $('#nodes').empty();
     $.getJSON( '/nodes' , null, function(data){
       $.each(data, function(index, item) {
+        
         var panel =$('<div class="panel panel-default"></div>');
-        panel.append($('<div class="panel-heading">Node '+item.sourceAddress+'</div>'));
+        panel.append($('<div class="panel-heading">Node '+item.address+'</div>'));
         var body = $('<div class="panel-body"></div>');
         panel.append(body);
 
         var srcgrp = $('<div class="form-group"></div>');
-        srcgrp.append($('<label for="src_'+item._id+'">source address</label>'));
-        srcgrp.append($('<input type="number" class="form-control" value="'+item.sourceAddress+'" id="src_'+item._id+'" readonly>'));
+        srcgrp.append($('<label for="src_'+item._id+'">address</label>'));
+        srcgrp.append($('<input type="number" class="form-control" value="'+item.address+'" id="src_'+item._id+'" readonly>'));
         body.append(srcgrp);
 
         var namegrp = $('<div class="form-group"></div>');
@@ -69,9 +70,10 @@ $(function(){
         savebtn.click(function(){
           item.name = name.val();
           item.location = location.val();
-          $.post('/nodes/'+item.sourceAddress, item, function(){
+
+          $.post('/nodes/'+item.address, item, function(){
             refresh();
-          });
+          }, 'json');
         });
         body.append(savebtn);
 

@@ -105,11 +105,11 @@ $(function(){
   });
   $.getJSON( '/nodes' ,null, function(data){
     $.each(data, function(index, item) {
-      var nodeoption = $('<a href="#" class="list-group-item" id="node'+item.sourceAddress+'">'+item.sourceAddress+'</a>');
+      var nodeoption = $('<a href="#" class="list-group-item" id="node'+item.address+'">'+item.address+'</a>');
       nodeoption.click(function(){
         nodeoption.siblings().removeClass('active');
         nodeoption.addClass('active');
-        selectednode = item.sourceAddress;
+        selectednode = item.address;
         skip = 0; limit = 10;
         refreshContent();
       });
@@ -240,9 +240,19 @@ $(function(){
       }
     });
     if((btns != undefined) || (btns != null)){
-      var savebtn = $('<button type="button" class="btn btn-default">Save</button>')
+      var savebtn = $('<button type="button" class="btn btn-default">Save</button>');
+      savebtn.click(function(){
+        alert('NOT IMPLEMENTED YET');
+      });
       body.append(savebtn);
-      var deletebtn = $('<button type="button" class="btn btn-default">Delete</button>')
+      var deletebtn = $('<button type="button" class="btn btn-default">Delete</button>');
+      deletebtn.click(function(){
+        $.ajax({
+          url: '/messages/'+name+'/'+id,
+          type: 'DELETE',
+          success: refreshContent,
+        });
+      });
       body.append(deletebtn);
     }
     return panel;
