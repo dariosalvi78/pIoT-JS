@@ -81,6 +81,10 @@
             <button type="button" class="btn btn-small" id="plotforward">
               <i class="glyphicon glyphicon-forward"></i>
             </button>
+            <label for="plotNodesSelect">Node:</label>
+            <select class="form-control" id="plotNodesSelect">
+              <option value="all">All</option>
+            </select>
           </form>
         </div>
       </div>
@@ -106,6 +110,7 @@ $(function(){
   $.getJSON( '/nodes' ,null, function(data){
     $.each(data, function(index, item) {
       var nodeoption = $('<a href="#" class="list-group-item" id="node'+item.address+'">'+item.address+'</a>');
+      var nodeplotoption = $('<option value="'+item.address+'">'+item.address+'</option>');
       nodeoption.click(function(){
         nodeoption.siblings().removeClass('active');
         nodeoption.addClass('active');
@@ -114,6 +119,7 @@ $(function(){
         refreshContent();
       });
       $('#nodeslist').append(nodeoption);
+      $('#plotNodesSelect').append(nodeplotoption);
     });
   });
 
@@ -175,6 +181,7 @@ $(function(){
     };
 
   var plotproperty = null;
+
   var renderMessage = function(m){
     if(m === null)
       return;
@@ -217,6 +224,7 @@ $(function(){
           $('#start').val(new Date(m.timestamp-24*60*60*1000).toJSON().slice(0,19));
           $('#end').val(new Date(m.timestamp).toJSON().slice(0,19));
           plotproperty = name+'.'+prop;
+          selectednodePlot = selectednode;
           $('#plotModal').modal('show');
         });
         formgroup.append(chart);
@@ -288,19 +296,31 @@ $(function(){
     $('#end').val(new Date(end).toJSON().slice(0,19));
     refreshPlot();
   });
+  var selectednodePlot = null;
+  $('#plotNodesSelect').on('change', function() {
+    selectednodePlot = this.value;
+    if(selectednodePlot === 'all')
+      selectednodePlot = null;
+    refreshPlot();
+  });
 
   var now = new Date();
   $('#start').val(new Date(now-24*60*60*1000).toJSON().slice(0,19));
   $('#end').val(now.toJSON().slice(0,19));
 
   var refreshPlot = function(){
+    if(selectednodePlot == null)
+      $('#plotNodesSelect').val('all');
+    else
+      $('#plotNodesSelect').val(selectednodePlot);
+
     var path = '/plots/'+plotproperty
     var start = new Date($('#start').val());
     var end = new Date($('#end').val());
     $.getJSON(path ,{
         start : start.getTime(),
         end : end.getTime(),
-        srcAddr : selectednode
+        srcAddr : selectednodePlot
       }, function(resp){
         $('#plot').highcharts({
           chart: {
