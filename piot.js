@@ -88,9 +88,10 @@ function startSerial(name){
         serialBuffer.shift();
       serialBuffer.push(data);
       try{
+        logger.info('received line: '+data);
         storeData(JSON.parse(data));
       } catch(e) {
-        logger.error('cannot parse '+data+': '+JSON.stringify(e));
+        logger.error('cannot parse line: '+data+', cause: '+JSON.stringify(e));
       }
    });
    currentPort.on('close', function() {
