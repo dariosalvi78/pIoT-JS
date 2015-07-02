@@ -121,8 +121,8 @@ $(function(){
     if((btns != undefined) || (btns != null)){
       var sendbtn = $('<button type="button" class="btn btn-default">Send</button>');
       sendbtn.click(function(){
-        $.post('/serials/current', { sendline: JSON.stringify(m) }, function(){
-          console.log(m+'maybe sent');
+        var line = '{ "'+name+'": ' + JSON.stringify(m) + ' }';
+        $.post('/serials/current', { sendline: line }, function(){
           //TODO: check if Error has been generated in serial
         });
       });
@@ -156,8 +156,8 @@ $(function(){
     body.append(formgrp);
     var sendbtn = $('<button type="button" class="btn btn-default">Send</button>');
     sendbtn.click(function(){
-      $.post('/serials/current', { sendline: JSON.stringify(textarea.val()) }, function(){
-        console.log('maybe sent');
+      var line = textarea.val();
+      $.post('/serials/current', { sendline: line }, function(){
         //TODO: check if Error has been generated in serial
       });
     });
@@ -171,7 +171,7 @@ $(function(){
         alert('Cannot parse it');
       }
       $.post('/actions', { action: textarea.val() } )
-      .done(function(){ alert('saved')})
+      .done(function(){ refreshcontent(); })
       .fail(function(){ alert('not saved')});
     });
     body.append(savebtn);
