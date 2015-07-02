@@ -10,81 +10,115 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://github.com/dariosalvi78/pIoT">
-	  <img src="Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://github.com/dariosalvi78/pIoT">
+          <img src="Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="active"><a href="#">Nodes</a></li>
+            <li><a href="data.html">Data</a></li>
+            <li><a href="actions.html">Actions</a></li>
+            <li><a href="#">Rules</a></li>
+            <li><a href="serial.html">Serial</a></li>
+            <li><a href="log.html">Log</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <p class="lead">Active nodes:</p>
+      <div id="nodes"></div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="deleteConfirmModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Confirm</h4>
+            </div>
+            <div class="modal-body">
+              <p>Deleting the node will also delete all its data, are you sure?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" id="deleteConfirmed">Yes</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li><a href="index.html">Dashboard</a></li>
-        <li class="active"><a href="#">Nodes</a></li>
-        <li><a href="data.html">Data</a></li>
-        <li><a href="#">Actions</a></li>
-        <li><a href="#">Rules</a></li>
-        <li><a href="serial.html">Serial</a></li>
-        <li><a href="log.html">Log</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
+    <script>
+    $(function(){
 
-<div class="container">
-  <p class="lead">Active nodes:</p>
-  <div id="nodes"></div>
-</div>
+      var refresh = function(){
+        $('#nodes').empty();
+        $.getJSON( '/nodes' , null, function(data){
+          $.each(data, function(index, item) {
 
-<script>
-$(function(){
+            var panel =$('<div class="panel panel-default"></div>');
+            panel.append($('<div class="panel-heading">Node '+item.address+'</div>'));
+            var body = $('<div class="panel-body"></div>');
+            panel.append(body);
 
-  var refresh = function(){
-    $('#nodes').empty();
-    $.getJSON( '/nodes' , null, function(data){
-      $.each(data, function(index, item) {
-        
-        var panel =$('<div class="panel panel-default"></div>');
-        panel.append($('<div class="panel-heading">Node '+item.address+'</div>'));
-        var body = $('<div class="panel-body"></div>');
-        panel.append(body);
+            var srcgrp = $('<div class="form-group"></div>');
+            srcgrp.append($('<label for="src_'+item._id+'">address</label>'));
+            srcgrp.append($('<input type="number" class="form-control" value="'+item.address+'" id="src_'+item._id+'" readonly>'));
+            body.append(srcgrp);
 
-        var srcgrp = $('<div class="form-group"></div>');
-        srcgrp.append($('<label for="src_'+item._id+'">address</label>'));
-        srcgrp.append($('<input type="number" class="form-control" value="'+item.address+'" id="src_'+item._id+'" readonly>'));
-        body.append(srcgrp);
+            var namegrp = $('<div class="form-group"></div>');
+            namegrp.append($('<label for="name_'+item._id+'">name</label>'));
+            var name = $('<input type="text" class="form-control" value="'+item.name+'" id="name_'+item._id+'">');
+            namegrp.append(name);
+            body.append(namegrp);
 
-        var namegrp = $('<div class="form-group"></div>');
-        namegrp.append($('<label for="name_'+item._id+'">name</label>'));
-        var name = $('<input type="text" class="form-control" value="'+item.name+'" id="name_'+item._id+'">');
-        namegrp.append(name);
-        body.append(namegrp);
+            var locgrp = $('<div class="form-group"></div>');
+            locgrp.append($('<label for="loc_'+item._id+'">location</label>'));
+            var location = $('<input type="text" class="form-control" value="'+item.location+'" id="loc_'+item._id+'">');
+            locgrp.append(location);
+            body.append(locgrp);
 
-        var locgrp = $('<div class="form-group"></div>');
-        locgrp.append($('<label for="loc_'+item._id+'">location</label>'));
-        var location = $('<input type="text" class="form-control" value="'+item.location+'" id="loc_'+item._id+'">');
-        locgrp.append(location);
-        body.append(locgrp);
+            var savebtn = $('<button type="button" class="btn btn-default">Save</button>');
+            savebtn.click(function(){
+              item.name = name.val();
+              item.location = location.val();
 
-        var savebtn = $('<button type="button" class="btn btn-default">Save</button>');
-        savebtn.click(function(){
-          item.name = name.val();
-          item.location = location.val();
+              $.post('/nodes/'+item.address, item, function(){
+                refresh();
+              }, 'json');
+            });
+            body.append(savebtn);
 
-          $.post('/nodes/'+item.address, item, function(){
-            refresh();
-          }, 'json');
+            var deletebtn = $('<button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteConfirmModal">Delete</button>');
+            deletebtn.click(function(){
+              $('#deleteConfirmed').click(function(){
+                $.ajax({
+                  url: '/nodes/'+item.address,
+                  type: 'DELETE'
+                }).done(function( data ) {
+                  refresh();
+                });
+              });
+            });
+            body.append(deletebtn);
+
+            $('#nodes').append(panel);
+          });
         });
-        body.append(savebtn);
+      };
 
-        $('#nodes').append(panel);
-      });
+      refresh();
     });
-  };
+    </script>
 
-  refresh();
-});
-</script>
-
-</body>
-</html>
+  </body>
+  </html>

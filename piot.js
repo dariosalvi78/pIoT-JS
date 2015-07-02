@@ -16,6 +16,9 @@ var serialBuffer = [];
 var dbs = [];
 //database of the nodes
 var nodesdb = null;
+//database of the action examples
+var actionsdb = null;
+
 
 var app = new servi(false);
 app.port(9090);
@@ -27,7 +30,9 @@ app.route('/logs', serveLogs);
 
 app.route('/messagetypes', serveMessagetypes);
 app.route('/nodes', serveNodes);
+app.route('/nodes/:nodeAddress', serveNodes);
 app.route('/messages', serveMessages);
+app.route('/actions', serveActions);
 app.route('/plots/:dataname', servePlots);
 
 function listserials(request) {
@@ -83,12 +88,11 @@ function startSerial(name){
      logger.info(name+' open');
    });
    currentPort.on('data', function(data) {
-     logger.log('debug', 'got data on '+currentPort.path+' '+ data);
-      if(serialBuffer.length > 20)
+     if(serialBuffer.length > 20)
         serialBuffer.shift();
       serialBuffer.push(data);
       try{
-        logger.info('received line: '+data);
+        logger.info('received line on '+currentPort.path+': '+data);
         storeData(JSON.parse(data));
       } catch(e) {
         logger.error('cannot parse line: '+data+', cause: '+JSON.stringify(e));
@@ -130,12 +134,7 @@ function serveLogs(request){
 function initDBs(){
   logger.info('loading nodes DB');
   nodesdb = useDatabase('nodesdb');
-  nodesdb.getAll(function(nodes){
-    for(var i=0; i<nodes.length; i++){
-      var route = '/nodes/'+nodes[i].address;
-      app.route(route, serveNodes);
-    }
-  });
+  actionsdb = useDatabase('actionsdb');
 
   var names = files.readdirSync('./');
   for(var i in names){
@@ -144,7 +143,7 @@ function initDBs(){
     var pre = filename.substring(0,filename.lastIndexOf('.'));
     if(ext.toLowerCase() === 'db'){
       logger.info('loading DB '+filename);
-      if(pre !== 'nodesdb'){
+      if((pre !== 'nodesdb') && (pre !== 'actionsdb')){
         dbs[pre] = useDatabase(pre);
         app.route('/messages/'+pre, serveMessages);
         app.route('/messages/'+pre+'/:id', serveMessages);
@@ -267,6 +266,35 @@ function serveMessages(request){
   }
 }
 
+function serveActions(request){
+  if(request.method.toLowerCase() == "get"){
+    actionsdb.getAll(function(data){
+      request.header("application/json");
+      request.respond(JSON.stringify(data));
+    });
+  } else if(request.method.toLowerCase() == "post"){
+    var action = JSON.parse(request.fields['action']);
+    var name;
+    for(var member in action){
+      name = member;
+    }
+    app.route('/actions/'+name, serveActions);
+    logger.info('new action set ' + name);
+    actionsdb.add(action);
+    request.respond('OK');
+  }
+  else if(request.method.toLowerCase() == "delete"){
+    var name = request.path.split('/')[2];
+    logger.info('deleting action ' + name);
+    var example = JSON.parse('{ "'+name+'": { "$exists": true } }');
+
+    actionsdb.remove(example, { multi: true }, function(err, numReplaced, newDoc){
+      if(err) request.respond(JSON.stringify(err));
+      else request.respond("OK");
+    });
+  }
+}
+
 function servePlots(request){
   var end = new Date().getTime();//default value
   var start = new Date(end-24*60*60*1000).getTime();//default value
@@ -326,7 +354,7 @@ function serveNodes(request){
       request.respond(JSON.stringify(data));
     });
   } else if(request.method.toLowerCase() == "post"){
-    var addr = parseInt(request.path.split('/')[2]);
+    var addr = parseInt(request.params.nodeAddress);
     request.fields['address'] = parseInt(request.fields['address']);
     logger.info('updating node ' + addr+' to ' + JSON.stringify(request.fields));
     nodesdb.update({ address: addr }, request.fields, {}, function(err, numReplaced, newDoc){
@@ -336,6 +364,26 @@ function serveNodes(request){
       } else {
         request.header("application/json");
         request.respond(JSON.stringify(request.fields));
+      }
+    });
+  } else if(request.method.toLowerCase() == "delete"){
+    var addr = parseInt(request.params.nodeAddress);
+    logger.info('deleting node ' + addr + ' and all its data');
+    nodesdb.remove({ address: addr }, { multi: true }, function(err, numReplaced, newDoc){
+      if(err){
+        request.header("application/json");
+        request.respond(JSON.stringify(err));
+      } else {
+        //delete all data of this node
+        for(dataname in dbs){
+          console.log('deleting from '+dataname);
+          dbs[dataname].remove({ sourceAddress: addr }, { multi: true }, function(err, numReplaced, newDoc){
+            if(err){
+              request.header("application/json");
+              request.respond(JSON.stringify(err));
+            } else request.respond('OK');
+          });
+        }
       }
     });
   }

@@ -21,7 +21,8 @@
       img.onload = function imgOnLoaded() {
         $.getJSON('messages/garden' ,{
             skip : 0,
-            limit : 1
+            limit : 1,
+            srcAddr: 7215
           }, function(data){
             var temp = data[0].garden.temperature;
             if (temp > 50)

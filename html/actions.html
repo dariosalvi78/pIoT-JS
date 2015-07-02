@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>pIoT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://github.com/dariosalvi78/pIoT">
+	  <img src="Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="nodes.html">Nodes</a></li>
+        <li><a href="data.html">Data</a></li>
+        <li class="active"><a href="#">Actions</a></li>
+        <li><a href="#">Rules</a></li>
+        <li><a href="serial.html">Serial</a></li>
+        <li><a href="log.html">Log</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <p class="lead">Actions:</p>
+      <div class="list-group" id="actionslist">
+        <a href="#" class="list-group-item" id="newaction">New Action</a>
+      </div>
+    </div>
+
+    <div class="col-sm-9" id="action">
+    </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+$(function(){
+
+  var renderAction = function(m){
+    if(m === null)
+      return;
+    var name;
+    for(var member in m){
+      if(member !== '_id')
+        name = member;
+    }
+    var panel = getPanel(name, m[name], m._id, true);
+    $('#action').append(panel);
+  };
+
+  var getPanel = function(name, m, id, btns){
+    var panel =$('<div class="panel panel-default"></div>');
+    panel.append($('<div class="panel-heading">'+name+'</div>'));
+    var body = $('<div class="panel-body"></div>');
+    panel.append(body);
+
+    if(m.destAddress != undefined){
+      var srcgrp = $('<div class="form-group"></div>');
+      srcgrp.append($('<label for="src_'+id+'">destination address</label>'));
+      var input = $('<input type="number" class="form-control" value="'+m.destAddress+'" id="src_'+id+'">');
+      input.change(function() {
+        m.destAddress = input.val();
+      });
+      srcgrp.append(input);
+      body.append(srcgrp);
+    }
+
+    $.each(m, function(prop, val) {
+      if((prop === '_id') || (prop === 'destAddress')){
+        //skip this
+      } else if(typeof val === 'number'){
+        var formgroup = $('<div class="form-group"></div>');
+        formgroup.append($('<label for="'+prop+'_'+id+'">'+prop+'</label>'));
+        var input = $('<input type="number" class="form-control" value="'+ val +'" id="'+prop+'_'+id+'">');
+        input.change(function() {
+          m[prop] = input.val();
+        });
+        formgroup.append(input);
+        body.append(formgroup);
+      } else if(typeof val === 'string'){
+        var formgroup = $('<div class="form-group"></div>');
+        formgroup.append($('<label for="'+prop+'_'+id+'">'+prop+'</label>'));
+        var input = $('<input type="text" class="form-control" value="'+ val +'" id="'+prop+'_'+id+'">');
+        input.change(function() {
+          m[prop] = input.val();
+        });
+        formgroup.append(input);
+        body.append(formgroup);
+      } else if(typeof val === 'boolean'){
+        var checkbox = $('<div class="checkbox"></div>');
+        checkbox.append($('<label>'+prop+'</label>'));
+        var input = $('<input type="checkbox" id="'+prop+'_'+id+'">');
+        input.change(function() {
+          m[prop] = input.val();
+        });
+        checkbox.append(input);
+        body.append(checkbox);
+      } else if(typeof val === 'object'){
+        var collapsible = $('<p><a data-toggle="collapse" data-target="#'+prop+'_'+id+'" style="cursor: pointer;"><strong>'+prop+'</strong></a></p>');
+        body.append(collapsible);
+        var obj = $('<div  id="'+prop+'_'+id+'" class="collapse"></div>');
+        body.append(obj);
+        obj.append(getPanel(prop, val, prop+'_'+id));
+      }
+    });
+
+    if((btns != undefined) || (btns != null)){
+      var sendbtn = $('<button type="button" class="btn btn-default">Send</button>');
+      sendbtn.click(function(){
+        $.post('/serials/current', { sendline: JSON.stringify(m) }, function(){
+          console.log(m+'maybe sent');
+          //TODO: check if Error has been generated in serial
+        });
+      });
+      body.append(sendbtn);
+      var deletebtn = $('<button type="button" class="btn btn-default">Delete</button>');
+      deletebtn.click(function(){
+        $.ajax({
+          url: '/actions/'+name,
+          type: 'DELETE'
+        }).done(function( data ) {
+          refreshcontent();
+          });
+      });
+      body.append(deletebtn);
+    }
+    return panel;
+  }
+
+
+  $('#newaction').click(function(){
+    $('#newaction').siblings().removeClass('active');
+    $('#newaction').addClass('active');
+    $('#action').empty();
+    var panel =$('<div class="panel panel-default"></div>');
+    panel.append($('<div class="panel-heading">New action</div>'));
+    var body = $('<div class="panel-body"></div>');
+    panel.append(body);
+    var formgrp = $('<div class="form-group"><label for="comment">Describe JSON:</label></div>');
+    var textarea = $('<textarea class="form-control" rows="5" id="comment" name="newaction"></textarea>');
+    formgrp .append(textarea);
+    body.append(formgrp);
+    var sendbtn = $('<button type="button" class="btn btn-default">Send</button>');
+    sendbtn.click(function(){
+      $.post('/serials/current', { sendline: JSON.stringify(textarea.val()) }, function(){
+        console.log('maybe sent');
+        //TODO: check if Error has been generated in serial
+      });
+    });
+    body.append(sendbtn);
+    var savebtn = $('<button type="button" class="btn btn-default">Save</button>');
+    savebtn.click(function(){
+      var json = null;
+      try{
+        json = JSON.parse(textarea.val());
+      }catch(e){
+        alert('Cannot parse it');
+      }
+      $.post('/actions', { action: textarea.val() } )
+      .done(function(){ alert('saved')})
+      .fail(function(){ alert('not saved')});
+    });
+    body.append(savebtn);
+    $('#action').append(panel);
+  });
+
+
+  var refreshcontent = function(){
+    $('#newaction').siblings().remove();
+    $('#action').empty();
+    $.get('/actions', function(actions){
+      $.each(actions, function( index, value ) {
+        var name;
+        for(var member in value){
+          if(member !== '_id')
+            name = member;
+        }
+        var actionOption = $('<a href="#" class="list-group-item" id="'+name+'">'+name+'</a>');
+        actionOption.click(function() {
+          $('#action').empty();
+          actionOption.siblings().removeClass('active');
+          actionOption.addClass('active');
+          renderAction(value);
+        });
+        $('#actionslist').append(actionOption);
+      });
+    });
+  };
+
+  refreshcontent();
+});
+</script>
+
+</body>
+</html>
