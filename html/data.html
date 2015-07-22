@@ -164,6 +164,7 @@ $(function(){
       }, function(data){
         if(skip <=0) $('#previous').hide();
         else $('#previous').show();
+        $('#previous').off( "click" );
         $('#previous').click(function(){ skip -= limit; refreshContent(); });
         if(selectedmessagetype){
           if((skip+limit) >= counters[selectedmessagetype]) $('#next').hide();
@@ -172,6 +173,7 @@ $(function(){
           if((skip+limit) >= counters['all']) $('#next').hide();
           else $('#next').show();
         }
+        $('#next').off( "click" );
         $('#next').click(function(){ skip += limit; refreshContent(); });
 
         $.each(data, function(index, item) {

@@ -12,6 +12,8 @@ var SerialPort = serialport.SerialPort;
 var currentPort = null;
 var serialBuffer = [];
 
+//dbs are compacted every 10 minutes
+var AUTOCOMPACT_INTERVAL = 10 * 60 * 1000;
 //databases of all data
 var dbs = [];
 //database of the nodes
@@ -134,7 +136,9 @@ function serveLogs(request){
 function initDBs(){
   logger.info('loading nodes DB');
   nodesdb = useDatabase('nodesdb');
+  //nodesdb.persistence.setAutocompactionInterval(AUTOCOMPACT_INTERVAL);
   actionsdb = useDatabase('actionsdb');
+  //actionsdb.persistence.setAutocompactionInterval(AUTOCOMPACT_INTERVAL);
 
   var names = files.readdirSync('./');
   for(var i in names){
@@ -145,6 +149,7 @@ function initDBs(){
       logger.info('loading DB '+filename);
       if((pre !== 'nodesdb') && (pre !== 'actionsdb')){
         dbs[pre] = useDatabase(pre);
+        //dbs[pre].persistence.setAutocompactionInterval(AUTOCOMPACT_INTERVAL);
         app.route('/messages/'+pre, serveMessages);
         app.route('/messages/'+pre+'/:id', serveMessages);
       }
@@ -192,12 +197,13 @@ function serveMessages(request){
       else request.respond('OK');
     });
   } else if(request.method.toLowerCase() == "get"){
-    var skip =0, limit=100;
+
+    var skip =0, limit=10;
     var srcAddr = null;
     if(request.params['skip'] !== undefined)
-    skip = request.params['skip'];
+    skip = parseInt(request.params['skip']);
     if(request.params['limit'] !== undefined)
-    limit = request.params['limit'];
+    limit = parseInt(request.params['limit']);
     if((request.params['srcAddr'] !== undefined) &&
     (request.params['srcAddr'] !== ''))
     srcAddr = parseInt(request.params['srcAddr']);
@@ -211,7 +217,6 @@ function serveMessages(request){
       var dataname = request.path.split('/')[2];
       if(dataname.lastIndexOf('?') >0)
       dataname = dataname.slice(0, dataname.lastIndexOf('?'));
-
       dbs[dataname].find(filter).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
         //add dataname
         var rr =[];

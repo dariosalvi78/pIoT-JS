@@ -96,7 +96,7 @@ $(function(){
         formgroup.append($('<label for="'+prop+'_'+id+'">'+prop+'</label>'));
         var input = $('<input type="text" class="form-control" value="'+ val +'" id="'+prop+'_'+id+'">');
         input.change(function() {
-          m[prop] = input.val();
+          m[prop] = parseInt(input.val());
         });
         formgroup.append(input);
         body.append(formgroup);
