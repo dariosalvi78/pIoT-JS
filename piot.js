@@ -34,6 +34,8 @@ app.route('/messagetypes', serveMessagetypes);
 app.route('/nodes', serveNodes);
 app.route('/nodes/:nodeAddress', serveNodes);
 app.route('/messages', serveMessages);
+app.route('/messages/:dataname', serveMessages);
+app.route('/messages/:dataname/:messageid', serveMessages);
 app.route('/actions', serveActions);
 app.route('/plots/:dataname', servePlots);
 
@@ -150,8 +152,6 @@ function initDBs(){
       if((pre !== 'nodesdb') && (pre !== 'actionsdb')){
         dbs[pre] = useDatabase(pre);
         //dbs[pre].persistence.setAutocompactionInterval(AUTOCOMPACT_INTERVAL);
-        app.route('/messages/'+pre, serveMessages);
-        app.route('/messages/'+pre+'/:id', serveMessages);
       }
     }
   }
@@ -187,10 +187,8 @@ function storeData(obj){
 
 function serveMessages(request){
   if(request.method.toLowerCase() == "delete"){
+    var dataname = request.params.dataname;
     var id = request.params.id;
-    var dataname = request.path.split('/')[2];
-    if(dataname.lastIndexOf('?') >0)
-      dataname = dataname.slice(0, dataname.lastIndexOf('?'));
     logger.info('deleting '+dataname+' id:'+id);
     dbs[dataname].remove({ _id: id }, {}, function (err, numRemoved) {
       if(err) request.respond(JSON.stringify(err));
@@ -200,6 +198,7 @@ function serveMessages(request){
 
     var skip =0, limit=10;
     var srcAddr = null;
+    var fromdate = null;
     if(request.params['skip'] !== undefined)
     skip = parseInt(request.params['skip']);
     if(request.params['limit'] !== undefined)
@@ -207,26 +206,41 @@ function serveMessages(request){
     if((request.params['srcAddr'] !== undefined) &&
     (request.params['srcAddr'] !== ''))
     srcAddr = parseInt(request.params['srcAddr']);
+    if((request.params['fromdate'] !== undefined) &&
+    (request.params['fromdate'] !== ''))
+    fromdate = parseInt(request.params['fromdate']);
+
 
     var filter = {};
     if(srcAddr !== null)
-    filter = { sourceAddress: srcAddr };
+    filter.sourceAddress = srcAddr;
+    if(fromdate !== null)
+    filter.timestamp = {$lte : fromdate};
 
-    if(request.path.split('/').length>2){
+    if(request.params.dataname){
       //one datatype specified
-      var dataname = request.path.split('/')[2];
-      if(dataname.lastIndexOf('?') >0)
-      dataname = dataname.slice(0, dataname.lastIndexOf('?'));
-      dbs[dataname].find(filter).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
-        //add dataname
-        var rr =[];
-        for(var i= 0; i<docs.length; i++){
-          rr[i] = {};
-          rr[i][dataname] = docs[i];
-        }
-        request.header("application/json");
-        request.respond(JSON.stringify(rr));
-      });
+      var dataname = request.params.dataname;
+      if(request.params.messageid){
+        //one specific message
+        var id = request.params.messageid;
+        dbs[dataname].findOne({ _id: id }, function(err, doc){
+          var rr ={ };
+          rr[dataname] = doc;
+          request.header("application/json");
+          request.respond(JSON.stringify(rr));
+        });
+      } else {
+        dbs[dataname].find(filter).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
+          //add dataname
+          var rr =[];
+          for(var i= 0; i<docs.length; i++){
+            rr[i] = {};
+            rr[i][dataname] = docs[i];
+          }
+          request.header("application/json");
+          request.respond(JSON.stringify(rr));
+        });
+      }
     } else {
       //all datatypes
       var ret = [];

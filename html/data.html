@@ -97,6 +97,7 @@ $(function(){
   var limit = 10;
   var skip = 0;
   var counters = [];
+  var fromdate = null;
 
   //nodes list
   var selectednode = null;
@@ -104,6 +105,7 @@ $(function(){
     $('#allnodes').siblings().removeClass('active');
     $('#allnodes').addClass('active');
     selectednode = null;
+    fromdate = null;
     skip = 0; limit = 10;
     refreshContent();
   });
@@ -115,6 +117,7 @@ $(function(){
         nodeoption.siblings().removeClass('active');
         nodeoption.addClass('active');
         selectednode = item.address;
+        fromdate = null;
         skip = 0; limit = 10;
         refreshContent();
       });
@@ -160,7 +163,8 @@ $(function(){
     $.getJSON(path ,{
         skip : skip,
         limit : limit,
-        srcAddr : selectednode
+        srcAddr : selectednode,
+        fromdate : fromdate
       }, function(data){
         if(skip <=0) $('#previous').hide();
         else $('#previous').show();
@@ -346,11 +350,23 @@ $(function(){
           },
           plotOptions: {
             spline: {
-                marker: {
-                    enabled: true
+              marker: {
+                enabled: true
+              }
+            },
+            series: {
+              point: {
+                events: {
+                  click: function (e) {
+                    $('#plotModal').modal('hide');
+                    fromdate = this.x;
+                    //selectedmessagetype = plotproperty.split('.')[0];
+                    refreshContent();
+                  }
                 }
+              }
             }
-        },
+          },
           series: [{
               name: plotproperty,
               data: resp,
