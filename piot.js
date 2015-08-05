@@ -188,7 +188,7 @@ function storeData(obj){
 function serveMessages(request){
   if(request.method.toLowerCase() == "delete"){
     var dataname = request.params.dataname;
-    var id = request.params.id;
+    var id = request.params.messageid;
     logger.info('deleting '+dataname+' id:'+id);
     dbs[dataname].remove({ _id: id }, {}, function (err, numRemoved) {
       if(err) request.respond(JSON.stringify(err));
