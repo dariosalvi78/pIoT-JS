@@ -1,8 +1,14 @@
 # pIoT-JS
-pico/personal Internet of Things, javascript server to be run with node.js
+pico/personal Internet of Things, a javascript server that collects data from pIoT nodes, shows plots and runs rules
 
-#Prerequisites:
+## Prerequisites:
 
 - serialport (npm install serialport)
 - servi (npm install servi)
 - winston (npm install winston)
+
+you can also load all dependencies by calling npm install
+
+## Run:
+
+call `node piot.js`

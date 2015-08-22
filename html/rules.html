@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>pIoT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://github.com/dariosalvi78/pIoT">
+          <img src="Chick.svg" height="30px" style="display: inline;"/> pIoT</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="nodes.html">Nodes</a></li>
+            <li><a href="data.html">Data</a></li>
+            <li><a href="actions.html">Actions</a></li>
+            <li class="active"><a href="#">Rules</a></li>
+            <li><a href="serial.html">Serial</a></li>
+            <li><a href="log.html">Log</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="lead">Rules:</p>
+          <div class="list-group" id="ruleslist">
+            <a href="#" class="list-group-item" id="newrule">New Rule</a>
+          </div>
+        </div>
+
+        <div class="col-sm-9" id="rule">
+
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+    $(function(){
+
+      $('#newrule').click(function(){
+        $('#newrule').siblings().removeClass('active');
+        $('#newrule').addClass('active');
+        $('#rule').empty();
+        var panel =$('<div class="panel panel-default"></div>');
+        var heading = $('<div class="panel-heading"></div>');
+        var name = $('<input type="text" class="form-control" placeholder="name">');
+        heading.append(name);
+        panel.append(heading);
+        var body = $('<div class="panel-body"></div>');
+        panel.append(body);
+        var ifformgrp = $('<div class="form-group"><label for="comment">IF:</label><span>Available variables: lastMessage</span></div>');
+        var iftextarea = $('<textarea class="form-control" rows="5" id="comment"></textarea>');
+        ifformgrp.append(iftextarea);
+        body.append(ifformgrp);
+        var thenformgrp = $('<div class="form-group"><label for="comment">THEN:</label><span>Available actions: send()</span></div>');
+        var thentextarea = $('<textarea class="form-control" rows="5" id="comment"></textarea>');
+        thenformgrp.append(thentextarea);
+        body.append(thenformgrp);
+        var savebtn = $('<button type="button" class="btn btn-default">Save</button>');
+        savebtn.click(function(){
+          var rule = {
+            name: name.val(),
+            condition: iftextarea.val(),
+            action: thentextarea.val()
+          };
+          $.post('/rules', { rule: JSON.stringify(rule) })
+          .done(function(){ refreshcontent(); })
+          .fail(function(){ alert('not saved')});
+        });
+        body.append(savebtn);
+        $('#rule').append(panel);
+      });
+
+      var refreshcontent = function(){
+        $('#newrule').siblings().remove();
+        $('#rule').empty();
+        $.get('/rules', function(rules){
+          $.each(rules, function( index, rule ) {
+            var name = rule.name;
+            var ruleOption = $('<a href="#" class="list-group-item" id="'+name+'">'+name+'</a>');
+            ruleOption.click(function() {
+              $('#rule').empty();
+              ruleOption.siblings().removeClass('active');
+              ruleOption.addClass('active');
+              var panel =$('<div class="panel panel-default"></div>');
+              var heading = $('<div class="panel-heading">'+name+'</div>');
+              panel.append(heading);
+              var body = $('<div class="panel-body"></div>');
+              panel.append(body);
+              var ifformgrp = $('<div class="form-group"><label for="comment">IF:</label><span>Available variables: lastMessage</span></div>');
+              var iftextarea = $('<textarea class="form-control" rows="5" id="comment" disabled>'+rule.condition+'</textarea>');
+              ifformgrp.append(iftextarea);
+              body.append(ifformgrp);
+              var thenformgrp = $('<div class="form-group"><label for="comment">THEN:</label><span>Available actions: send()</span></div>');
+              var thentextarea = $('<textarea class="form-control" rows="5" id="comment" disabled>'+rule.action+'</textarea>');
+              thenformgrp.append(thentextarea);
+              body.append(thenformgrp);
+              var delbtn = $('<button type="button" class="btn btn-default">Delete</button>');
+              delbtn.click(function(){
+                $.ajax({
+                  url: '/rules/'+name,
+                  type: 'DELETE'
+                }).done(function( data ) {
+                  refreshcontent();
+                });
+              });
+              body.append(delbtn);
+              $('#rule').append(panel);
+            });
+            $('#ruleslist').append(ruleOption);
+          });
+        });
+      };
+
+      refreshcontent();
+    });
+    </script>
+  </body>
+  </html>

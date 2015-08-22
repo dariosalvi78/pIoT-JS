@@ -20,7 +20,8 @@ var dbs = [];
 var nodesdb = null;
 //database of the action examples
 var actionsdb = null;
-
+//database of the rules
+var rulesdb = null;
 
 var app = new servi(false);
 app.port(9090);
@@ -37,7 +38,11 @@ app.route('/messages', serveMessages);
 app.route('/messages/:dataname', serveMessages);
 app.route('/messages/:dataname/:messageid', serveMessages);
 app.route('/actions', serveActions);
+app.route('/actions/:actionname', serveActions);
 app.route('/plots/:dataname', servePlots);
+app.route('/rules', serveRules);
+app.route('/rules/:rulename', serveRules);
+
 
 function listserials(request) {
   var resp = [];
@@ -138,9 +143,8 @@ function serveLogs(request){
 function initDBs(){
   logger.info('loading nodes DB');
   nodesdb = useDatabase('nodesdb');
-  //nodesdb.persistence.setAutocompactionInterval(AUTOCOMPACT_INTERVAL);
   actionsdb = useDatabase('actionsdb');
-  //actionsdb.persistence.setAutocompactionInterval(AUTOCOMPACT_INTERVAL);
+  rulesdb = useDatabase('rulesdb');
 
   var names = files.readdirSync('./');
   for(var i in names){
@@ -151,7 +155,6 @@ function initDBs(){
       logger.info('loading DB '+filename);
       if((pre !== 'nodesdb') && (pre !== 'actionsdb')){
         dbs[pre] = useDatabase(pre);
-        //dbs[pre].persistence.setAutocompactionInterval(AUTOCOMPACT_INTERVAL);
       }
     }
   }
@@ -209,7 +212,6 @@ function serveMessages(request){
     if((request.params['fromdate'] !== undefined) &&
     (request.params['fromdate'] !== ''))
     fromdate = parseInt(request.params['fromdate']);
-
 
     var filter = {};
     if(srcAddr !== null)
@@ -287,32 +289,71 @@ function serveMessages(request){
 
 function serveActions(request){
   if(request.method.toLowerCase() == "get"){
-    actionsdb.getAll(function(data){
-      request.header("application/json");
-      request.respond(JSON.stringify(data));
-    });
+    if(request.params.actionname){
+      var name = request.params.actionname;
+      var example = {};
+      example[name] = { $exists: true };
+      actionsdb.remove(example, { multi: true }, function(err, numReplaced, newDoc){
+        if(err) request.respond(JSON.stringify(err));
+        else request.respond("OK");
+      });
+    } else {
+      actionsdb.getAll(function(data){
+        request.header("application/json");
+        request.respond(JSON.stringify(data));
+      });
+    }
   } else if(request.method.toLowerCase() == "post"){
     var action = JSON.parse(request.fields['action']);
     var name;
     for(var member in action){
       name = member;
     }
-    app.route('/actions/'+name, serveActions);
     logger.info('new action set ' + name);
     actionsdb.add(action);
     request.respond('OK');
   }
   else if(request.method.toLowerCase() == "delete"){
-    var name = request.path.split('/')[2];
+    var name = request.params.actionname;
     logger.info('deleting action ' + name);
-    var example = JSON.parse('{ "'+name+'": { "$exists": true } }');
-
+    var example = {};
+    example[name] = { $exists: true };
     actionsdb.remove(example, { multi: true }, function(err, numReplaced, newDoc){
       if(err) request.respond(JSON.stringify(err));
       else request.respond("OK");
     });
   }
-}
+};
+
+function serveRules(request){
+  if(request.method.toLowerCase() == "get"){
+    if(request.params.rulename){
+      var name = request.params.rulename;
+      actionsdb.find({name: name}, function(err, doc){
+        if(err) request.respond(JSON.stringify(err));
+        else request.respond(doc);
+      });
+    } else {
+      rulesdb.getAll(function(data){
+        request.header("application/json");
+        request.respond(JSON.stringify(data));
+      });
+    }
+  } else if(request.method.toLowerCase() == "post"){
+    var rule = JSON.parse(request.fields['rule']);
+    logger.info('new rule set ', rule);
+    rulesdb.add(rule);
+    request.respond('OK');
+  }
+  else if(request.method.toLowerCase() == "delete"){
+    var name = request.params.rulename;
+    logger.info('deleting rule ' + name);
+    rulesdb.remove({ name: name }, { multi: true }, function(err, numReplaced, newDoc){
+      if(err) request.respond(JSON.stringify(err));
+      else request.respond("OK");
+    });
+  }
+};
 
 function servePlots(request){
   var end = new Date().getTime();//default value
