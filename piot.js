@@ -153,7 +153,7 @@ function initDBs(){
     var pre = filename.substring(0,filename.lastIndexOf('.'));
     if(ext.toLowerCase() === 'db'){
       logger.info('loading DB '+filename);
-      if((pre !== 'nodesdb') && (pre !== 'actionsdb')){
+      if((pre !== 'nodesdb') && (pre !== 'actionsdb') && (pre !== 'rulesdb')){
         dbs[pre] = useDatabase(pre);
       }
     }
@@ -260,16 +260,19 @@ function serveMessages(request){
           }
         }
         return result.concat(left.slice(il)).concat(right.slice(ir));
-      }
+      };
       var iterate = function(idxs){
         if(idxs.length === 0){
-          ret = ret.slice(skip, limit);
+          ret = ret.slice(skip, skip+limit);
           request.header("application/json");
           request.respond(JSON.stringify(ret));
         } else {
           var idx = idxs.pop();
           //TODO: this is inefficient, we should skip some elements, the problem is: how many?
-          dbs[idx].find(filter).sort({ timestamp: -1 }).limit(skip * limit).exec(function(err, docs){
+
+          dbs[idx].find(filter).sort({ timestamp: -1 }).limit(skip + limit).exec(function(err, docs){
+            console.log('got '+docs.length+' from '+idx);
+
             //add dataname
             var dd = [];
             for(var i= 0; i<docs.length; i++){
@@ -285,7 +288,7 @@ function serveMessages(request){
       iterate(Object.keys(dbs));
     }
   }
-}
+};
 
 function serveActions(request){
   if(request.method.toLowerCase() == "get"){
