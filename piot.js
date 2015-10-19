@@ -29,6 +29,7 @@ app.port(9090);
 app.serveFiles("html");     // serve static HTML from public folder
 app.route('/serials', listserials);
 app.route('/serials/current', serveserial);
+app.route('/test', serveTest);
 app.route('/logs', serveLogs);
 
 app.route('/messagetypes', serveMessagetypes);
@@ -89,30 +90,30 @@ function serveserial(request) {
 function startSerial(name){
   logger.info("opening port "+name);
   currentPort = new SerialPort(name, {
-     baudRate: 57600,
-     // look for return and newline at the end of each data packet:
-     parser: serialport.parsers.readline("\r\n")
-   });
-   currentPort.on('open', function() {
-     logger.info(name+' open');
-   });
-   currentPort.on('data', function(data) {
-     if(serialBuffer.length > 20)
-        serialBuffer.shift();
-      serialBuffer.push(data);
-      try{
-        logger.info('received line on '+currentPort.path+': '+data);
-        storeData(JSON.parse(data));
-      } catch(e) {
-        logger.error('cannot parse line: '+data+', cause: '+JSON.stringify(e));
-      }
-   });
-   currentPort.on('close', function() {
-     logger.info('serial port closed');
-   });
-   currentPort.on('error', function(error) {
-     logger.error('serial port error: '+JSON.stringify(error));
-   });
+    baudRate: 57600,
+    // look for return and newline at the end of each data packet:
+    parser: serialport.parsers.readline("\r\n")
+  });
+  currentPort.on('open', function() {
+    logger.info(name+' open');
+  });
+  currentPort.on('data', function(data) {
+    if(serialBuffer.length > 20)
+    serialBuffer.shift();
+    serialBuffer.push(data);
+    try{
+      logger.info('received line on '+currentPort.path+': '+data);
+      storeData(JSON.parse(data));
+    } catch(e) {
+      logger.error('cannot parse line: '+data+', cause: '+JSON.stringify(e));
+    }
+  });
+  currentPort.on('close', function() {
+    logger.info('serial port closed');
+  });
+  currentPort.on('error', function(error) {
+    logger.error('serial port error: '+JSON.stringify(error));
+  });
 }
 
 function stopSerial(){
@@ -120,7 +121,7 @@ function stopSerial(){
     currentPort.close();
     currentPort = null;
   }
-}
+};
 
 function serveLogs(request){
   logger.query({
@@ -138,7 +139,7 @@ function serveLogs(request){
       request.respond(JSON.stringify(results));
     }
   });
-}
+};
 
 function initDBs(){
   logger.info('loading nodes DB');
@@ -153,10 +154,18 @@ function initDBs(){
     var pre = filename.substring(0,filename.lastIndexOf('.'));
     if(ext.toLowerCase() === 'db'){
       logger.info('loading DB '+filename);
-      if((pre !== 'nodesdb') && (pre !== 'actionsdb') && (pre !== 'rulesdb')){
+      if((pre !== 'nodesdb') && (pre !== 'actionsdb')){
         dbs[pre] = useDatabase(pre);
       }
     }
+  }
+};
+
+function serveTest(request){
+  if(request.method.toLowerCase() == "post"){
+    var msg = request.fields['msg'];
+    storeData(JSON.parse(msg));
+    request.respond('OK');
   }
 }
 
@@ -185,8 +194,26 @@ function storeData(obj){
         nodesdb.add({ name : null, location: null, address: content.sourceAddress });
       }
     });
+    //Execute rules
+    var lastMessage = content;
+    var send = function(obj){
+      logger.info('Rule '+rule.name+' sending '+JSON.stringify(obj));
+      currentPort.write(JSON.stringify(obj));
+    };
+    rulesdb.getAll(function(rules){
+      rules.forEach(function(rule, index, array) {
+        try{
+          if(eval(rule.condition)){
+            logger.info('Rule '+rule.name+' activated');
+            eval(rule.action);
+          }
+        } catch(e){
+          logger.error("Error while executing rule "+rule.name+', cause: '+JSON.stringify(e));
+        }
+      });
+    });
   }
-}
+};
 
 function serveMessages(request){
   if(request.method.toLowerCase() == "delete"){
@@ -232,7 +259,7 @@ function serveMessages(request){
           request.respond(JSON.stringify(rr));
         });
       } else {
-        dbs[dataname].find(filter).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
+        dbs[dataname].find(filter).skip(skip).limit(limit).exec(function(err, docs){
           //add dataname
           var rr =[];
           for(var i= 0; i<docs.length; i++){
@@ -260,19 +287,16 @@ function serveMessages(request){
           }
         }
         return result.concat(left.slice(il)).concat(right.slice(ir));
-      };
+      }
       var iterate = function(idxs){
         if(idxs.length === 0){
-          ret = ret.slice(skip, skip+limit);
+          ret = ret.slice(skip, limit);
           request.header("application/json");
           request.respond(JSON.stringify(ret));
         } else {
           var idx = idxs.pop();
           //TODO: this is inefficient, we should skip some elements, the problem is: how many?
-
-          dbs[idx].find(filter).sort({ timestamp: -1 }).limit(skip + limit).exec(function(err, docs){
-            console.log('got '+docs.length+' from '+idx);
-
+          dbs[idx].find(filter).limit(skip * limit).exec(function(err, docs){
             //add dataname
             var dd = [];
             for(var i= 0; i<docs.length; i++){
@@ -363,16 +387,16 @@ function servePlots(request){
   var start = new Date(end-24*60*60*1000).getTime();//default value
   var srcAddr = null;
   if(request.params['start'] !== undefined)
-    start = parseInt(request.params['start']);
+  start = parseInt(request.params['start']);
   if(request.params['end'] !== undefined)
-    end = parseInt(request.params['end']);
+  end = parseInt(request.params['end']);
   if((request.params['srcAddr'] !== undefined) &&
-    (request.params['srcAddr'] !== ''))
-    srcAddr = parseInt(request.params['srcAddr']);
+  (request.params['srcAddr'] !== ''))
+  srcAddr = parseInt(request.params['srcAddr']);
 
   var filter = { timestamp: { $lte: end, $gte: start } };
   if(srcAddr !== null)
-    filter.sourceAddress = srcAddr;
+  filter.sourceAddress = srcAddr;
 
   var dataname = request.params.dataname.split('.')[0];
   var property = request.params.dataname.split('.')[1];
@@ -439,7 +463,6 @@ function serveNodes(request){
       } else {
         //delete all data of this node
         for(dataname in dbs){
-          console.log('deleting from '+dataname);
           dbs[dataname].remove({ sourceAddress: addr }, { multi: true }, function(err, numReplaced, newDoc){
             if(err){
               request.header("application/json");

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <title>pIoT test interface</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+
+  <form>
+    <textarea rows="4" cols="50" id="textarea">
+    </textarea>
+    <button type="button" id="button">send</button>
+  </form>
+
+  <script>
+  $(function(){
+
+    $('#button').click(function(){
+      var txtarea = $('#textarea');
+      $.post('/test', { msg: txtarea.val() })
+      .done(function(){ alert('sent') })
+      .fail(function(){ alert('not sent')});
+    });
+  });
+  </script>
+</body>
+</html>
