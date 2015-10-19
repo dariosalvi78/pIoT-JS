@@ -102,7 +102,7 @@ function startSerial(name){
     serialBuffer.shift();
     serialBuffer.push(data);
     try{
-      logger.info('received line on '+currentPort.path+': '+data);
+      logger.debug('received line on '+currentPort.path+': '+data);
       storeData(JSON.parse(data));
     } catch(e) {
       logger.error('cannot parse line: '+data+', cause: '+JSON.stringify(e));
@@ -154,7 +154,7 @@ function initDBs(){
     var pre = filename.substring(0,filename.lastIndexOf('.'));
     if(ext.toLowerCase() === 'db'){
       logger.info('loading DB '+filename);
-      if((pre !== 'nodesdb') && (pre !== 'actionsdb')){
+      if((pre !== 'nodesdb') && (pre !== 'actionsdb') && (pre !== 'rulesdb')){
         dbs[pre] = useDatabase(pre);
       }
     }
@@ -197,18 +197,18 @@ function storeData(obj){
     //Execute rules
     var lastMessage = content;
     var send = function(obj){
-      logger.info('Rule '+rule.name+' sending '+JSON.stringify(obj));
+      logger.info('rule '+rule.name+' sending '+JSON.stringify(obj));
       currentPort.write(JSON.stringify(obj));
     };
     rulesdb.getAll(function(rules){
       rules.forEach(function(rule, index, array) {
         try{
           if(eval(rule.condition)){
-            logger.info('Rule '+rule.name+' activated');
+            logger.info('rule '+rule.name+' activated');
             eval(rule.action);
           }
         } catch(e){
-          logger.error("Error while executing rule "+rule.name+', cause: '+JSON.stringify(e));
+          logger.error("error while executing rule "+rule.name+', cause: '+JSON.stringify(e));
         }
       });
     });
@@ -290,13 +290,13 @@ function serveMessages(request){
       }
       var iterate = function(idxs){
         if(idxs.length === 0){
-          ret = ret.slice(skip, limit);
+          ret = ret.slice(skip, skip+limit);
           request.header("application/json");
           request.respond(JSON.stringify(ret));
         } else {
           var idx = idxs.pop();
           //TODO: this is inefficient, we should skip some elements, the problem is: how many?
-          dbs[idx].find(filter).limit(skip * limit).exec(function(err, docs){
+          dbs[idx].find(filter).sort({ timestamp: -1 }).limit(skip + limit).exec(function(err, docs){
             //add dataname
             var dd = [];
             for(var i= 0; i<docs.length; i++){
