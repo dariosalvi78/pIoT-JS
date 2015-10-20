@@ -259,7 +259,7 @@ function serveMessages(request){
           request.respond(JSON.stringify(rr));
         });
       } else {
-        dbs[dataname].find(filter).skip(skip).limit(limit).exec(function(err, docs){
+        dbs[dataname].find(filter).sort({ timestamp: -1 }).skip(skip).limit(limit).exec(function(err, docs){
           //add dataname
           var rr =[];
           for(var i= 0; i<docs.length; i++){

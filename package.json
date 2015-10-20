@@ -1,0 +1,15 @@
+{
+  "name": "pIoT-JS",
+  "version": "0.0.1",
+  "description": "A javascript version of the pIoT server",
+  "author": "Dario Salvi <dariosalvi78@gmail.com>",
+  "scripts": {
+    "start": "node piot.js"
+  },
+  "dependencies": {
+    "serialport": "latest",
+    "servi": "latest",
+    "winston": "latest"
+  },
+  "license": "GPL v2"
+}

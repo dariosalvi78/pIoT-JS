@@ -1,0 +1,1402 @@
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-03T22:17:40.086Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-03T22:17:40.086Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-03T22:23:19.428Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-03T22:23:19.428Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-03T22:23:19.428Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-03T22:23:19.428Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-03T22:23:19.428Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-05T18:25:03.843Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-05T18:25:03.843Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-05T18:25:03.843Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-05T18:25:03.843Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-05T18:25:03.843Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T10:58:58.501Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T10:58:58.501Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T10:58:58.501Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T10:58:58.501Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T10:58:58.501Z"}
+{"anobject":"a string","level":"error","message":"jsut a test","timestamp":"2015-06-07T10:58:58.501Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T11:01:19.139Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T11:01:19.139Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T11:01:19.139Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T11:01:19.139Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T11:01:19.139Z"}
+{"anobject":"a string","level":"error","message":"jsut a test","timestamp":"2015-06-07T11:01:19.139Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:45:13.492Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:45:13.523Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:45:13.523Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:45:13.523Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:45:13.523Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:50:06.908Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:50:06.908Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:50:06.908Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:50:06.908Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:50:06.908Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:53:02.857Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:53:02.857Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:53:02.857Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:53:02.857Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:53:02.857Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:53:02.857Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:53:50.343Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:53:50.358Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:53:50.358Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:53:50.358Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:53:50.358Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:53:50.358Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:54:11.889Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:54:11.905Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:54:11.905Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:54:11.905Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:54:11.920Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:54:11.920Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:55:17.664Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:55:17.680Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:55:17.695Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:55:17.695Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:55:17.695Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:55:17.695Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:55:36.431Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:55:36.431Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:55:36.447Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:55:36.447Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:55:36.447Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:55:36.447Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:56:08.503Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:56:08.520Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:56:08.528Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:56:08.528Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:56:08.528Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:56:08.528Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:56:30.452Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:56:30.452Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:56:30.468Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:56:30.468Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:56:30.468Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:56:30.468Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:56:41.775Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:56:41.791Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:56:41.791Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:56:41.807Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:56:41.807Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:56:41.807Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:57:36.532Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:57:36.547Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:57:36.547Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:57:36.563Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:57:36.563Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:57:36.563Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T14:59:04.947Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T14:59:04.962Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T14:59:04.962Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T14:59:04.962Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T14:59:04.962Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T14:59:04.978Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:00:35.274Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:00:35.289Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:00:35.289Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:00:35.305Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:00:35.305Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:00:35.305Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:01:03.251Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:01:03.251Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:01:03.267Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:01:03.267Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:01:03.267Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:01:03.267Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:01:20.664Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:01:20.664Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:01:20.679Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:01:20.679Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:01:20.679Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:01:20.679Z"}
+{"level":"info","message":"updating node undefined","timestamp":"2015-06-07T15:01:30.667Z"}
+{"level":"info","message":"updating node undefined","timestamp":"2015-06-07T15:02:24.751Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:07:25.719Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:07:25.735Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:07:25.735Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:07:25.750Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:07:25.750Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:07:25.750Z"}
+{"level":"info","message":"updating node 7215","timestamp":"2015-06-07T15:07:34.656Z"}
+{"level":"info","message":"updating node 7215","timestamp":"2015-06-07T15:07:44.215Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:08:53.511Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:08:53.527Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:08:53.527Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:08:53.543Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:08:53.543Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:08:53.543Z"}
+{"level":"info","message":"updating node 7215, {\"name\":\"dario\",\"location\":\"garden\",\"sourceAddress\":\"7215\",\"_id\":\"wIAaZKkPI0Lq6pvI\"}","timestamp":"2015-06-07T15:09:03.942Z"}
+{"level":"info","message":"updating node 7215, {\"name\":\"null\",\"location\":\"terrace\",\"sourceAddress\":\"7215\",\"_id\":\"wIAaZKkPI0Lq6pvI\"}","timestamp":"2015-06-07T15:09:44.525Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:15:21.125Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:15:21.142Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:15:21.154Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:15:21.162Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:15:21.162Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:15:21.162Z"}
+{"level":"info","message":"updating node 7215, {\"name\":\"null\",\"location\":\"terrace\",\"sourceAddress\":\"7215\",\"_id\":\"wIAaZKkPI0Lq6pvI\"}","timestamp":"2015-06-07T15:16:04.864Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:17:35.503Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:17:35.503Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:17:35.519Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:17:35.519Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:17:35.519Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:17:35.519Z"}
+{"level":"info","message":"updating node 7215, {\"name\":\"null\",\"location\":\"terrace\",\"sourceAddress\":\"7215\",\"_id\":\"wIAaZKkPI0Lq6pvI\"}","timestamp":"2015-06-07T15:17:49.124Z"}
+{"level":"info","message":"updating node 7215, {\"name\":\"gardenino\",\"location\":\"terrace\",\"sourceAddress\":\"7215\",\"_id\":\"wIAaZKkPI0Lq6pvI\"}","timestamp":"2015-06-07T15:18:02.151Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:18:45.755Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:18:45.771Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:18:45.771Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:18:45.787Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:18:45.787Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:18:45.787Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:38:21.706Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:38:21.721Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:38:21.721Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-07T15:38:21.721Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:38:21.737Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:38:21.737Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:38:21.737Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:40:47.839Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:40:47.855Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:40:47.855Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-07T15:40:47.855Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:40:47.870Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:40:47.870Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:40:47.870Z"}
+{"level":"info","message":"updating node 7215, {\"name\":\"null\",\"location\":\"garden\",\"sourceAddress\":\"7215\",\"_id\":\"uzbwfAYUkI3e3rQZ\"}","timestamp":"2015-06-07T15:40:56.983Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:41:29.295Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:41:29.311Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:41:29.327Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-07T15:41:29.327Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:41:29.327Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:41:29.327Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:41:29.327Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T15:42:45.608Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T15:42:45.624Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T15:42:45.624Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-07T15:42:45.640Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T15:42:45.640Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T15:42:45.640Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T15:42:45.640Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T21:40:49.096Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T21:40:49.096Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T21:40:49.112Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-07T21:40:49.112Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T21:40:49.112Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T21:40:49.112Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T21:40:49.112Z"}
+{"level":"info","message":"updating node 9327, {\"name\":\"null\",\"location\":\"garden\",\"sourceAddress\":\"9327\",\"_id\":\"CmGh1zpfM1MagWap\"}","timestamp":"2015-06-07T21:42:11.074Z"}
+{"level":"info","message":"updating node 7215, {\"name\":\"alberobello\",\"location\":\"garden\",\"sourceAddress\":\"7215\",\"_id\":\"uzbwfAYUkI3e3rQZ\"}","timestamp":"2015-06-07T21:42:33.455Z"}
+{"level":"info","message":"updating node 9327, {\"name\":\"piantarella\",\"location\":\"garden\",\"sourceAddress\":\"9327\",\"_id\":\"CmGh1zpfM1MagWap\"}","timestamp":"2015-06-07T21:42:42.717Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T21:43:14.853Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T21:43:14.853Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T21:43:14.853Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-07T21:43:14.853Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T21:43:14.853Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T21:43:14.853Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T21:43:14.853Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T21:43:48.018Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T21:43:48.018Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T21:43:48.018Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-07T21:43:48.018Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T21:43:48.018Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T21:43:48.018Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T21:43:48.018Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-07T21:49:04.088Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-07T21:49:04.104Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-07T21:49:04.104Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-07T21:49:04.104Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-07T21:49:04.104Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-07T21:49:04.104Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-07T21:49:04.104Z"}
+{"level":"info","message":"updating node 9327, {\"name\":\"pietruszka\",\"location\":\"garden\",\"address\":\"9327\",\"_id\":\"CmGh1zpfM1MagWap\"}","timestamp":"2015-06-07T21:50:45.694Z"}
+{"level":"info","message":"updating node 7215, {\"name\":\"alberobello\",\"location\":\"garden\",\"address\":\"7215\",\"_id\":\"uzbwfAYUkI3e3rQZ\"}","timestamp":"2015-06-07T21:50:56.300Z"}
+{"level":"info","message":"updating node 9327, {\"name\":\"pietruszka\",\"location\":\"garden\",\"address\":\"9327\",\"_id\":\"CmGh1zpfM1MagWap\"}","timestamp":"2015-06-07T21:50:59.037Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-08T18:47:20.090Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-08T18:47:20.090Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-08T18:47:20.106Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-08T18:47:20.106Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-08T18:47:20.106Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-08T18:47:20.106Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-08T18:47:20.106Z"}
+{"level":"info","message":"updating node 9327 to {\"name\":\"pietruszka\",\"location\":\"garden\",\"address\":9327,\"_id\":\"CmGh1zpfM1MagWap\"}","timestamp":"2015-06-08T18:47:36.948Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-08T18:48:29.550Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-08T18:48:29.550Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-08T18:48:29.550Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-08T18:48:29.550Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-08T18:48:29.550Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-08T18:48:29.550Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-08T18:48:29.550Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-08T18:53:36.487Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-08T18:53:36.487Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-08T18:53:36.487Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-08T18:53:36.487Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-08T18:53:36.487Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-08T18:53:36.487Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-08T18:53:36.487Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-08T18:54:52.221Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-08T18:54:52.221Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-08T18:54:52.221Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-08T18:54:52.221Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-08T18:54:52.221Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-08T18:54:52.221Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-08T18:54:52.221Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-08T18:55:47.959Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-08T18:55:47.959Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-08T18:55:47.959Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-08T18:55:47.959Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-08T18:55:47.959Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-08T18:55:47.959Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-08T18:55:47.959Z"}
+{"level":"info","message":"deleting garden id:TYA24EmvKhAmLsmc","timestamp":"2015-06-08T18:56:10.158Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-08T18:57:02.156Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-08T18:57:02.156Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-08T18:57:02.156Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-08T18:57:02.156Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-08T18:57:02.156Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-08T18:57:02.156Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-08T18:57:02.156Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-08T18:59:24.285Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-08T18:59:24.285Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-08T18:59:24.301Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-08T18:59:24.301Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-08T18:59:24.301Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-08T18:59:24.301Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-08T18:59:24.301Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-14T21:05:46.140Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-14T21:05:46.156Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-14T21:05:46.168Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-14T21:05:46.172Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-14T21:05:46.172Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-14T21:05:46.172Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-14T21:05:46.176Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-21T18:56:30.665Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-21T18:56:30.711Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-21T18:56:30.711Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-21T18:56:30.711Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-21T18:56:30.711Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-21T18:56:30.711Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-21T18:56:30.711Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T18:28:25.625Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T18:28:25.629Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T18:28:25.631Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T18:28:25.631Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T18:28:25.631Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T18:28:25.631Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T18:28:25.631Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T18:28:25.631Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T18:28:25.631Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T18:28:25.631Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T18:59:09.025Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T19:07:16.676Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T19:08:31.005Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T19:08:31.023Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T19:08:31.026Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T19:08:31.026Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T19:08:31.026Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T19:08:31.026Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T19:08:31.027Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T19:08:31.027Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T19:08:31.027Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T19:08:31.028Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T19:10:15.807Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T19:12:33.232Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T19:12:33.248Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T19:16:58.061Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T19:16:58.061Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T19:16:58.077Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T19:16:58.077Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T19:16:58.077Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T19:16:58.077Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T19:16:58.077Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T19:16:58.077Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T19:16:58.077Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T19:16:58.077Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T19:18:43.046Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-06-28T19:20:06.151Z"}
+{"level":"info","message":"new action set ColorSet","timestamp":"2015-06-28T19:20:14.676Z"}
+{"level":"info","message":"new action set ColorSet","timestamp":"2015-06-28T19:22:14.672Z"}
+{"level":"info","message":"deleting action NaN","timestamp":"2015-07-02T11:45:49.262Z"}
+{"level":"info","message":"deleting action NaN","timestamp":"2015-07-02T11:46:25.771Z"}
+{"level":"info","message":"deleting action NaN","timestamp":"2015-07-02T11:51:35.550Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T11:56:10.541Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T11:56:10.556Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T11:56:10.572Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T11:56:10.572Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T11:56:10.572Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T11:56:10.572Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T11:56:10.572Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T11:56:10.572Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T11:56:10.572Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T11:56:10.572Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T11:58:01.781Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T11:58:01.797Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T11:58:01.812Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T11:58:01.812Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T11:58:01.812Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T11:58:01.812Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T11:58:01.812Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T11:58:01.812Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T11:58:01.812Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T11:58:01.812Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T11:58:46.214Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T11:58:46.230Z"}
+{"level":"info","message":"deleting action NaN","timestamp":"2015-07-02T11:58:58.943Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T12:00:19.520Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T12:00:19.535Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T12:00:19.535Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T12:00:19.535Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T12:00:19.535Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T12:00:19.535Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T12:00:19.535Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T12:00:19.535Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T12:00:19.551Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T12:00:19.551Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T12:00:26.429Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T12:01:56.003Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T12:01:56.003Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T12:01:56.003Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T12:01:56.003Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T12:01:56.019Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T12:01:56.019Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T12:01:56.019Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T12:01:56.019Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T12:01:56.019Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T12:01:56.019Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T12:02:03.560Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T12:22:58.068Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T12:23:08.289Z"}
+{"ColorSet":{},"level":"info","message":"","timestamp":"2015-07-02T12:23:08.289Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T12:39:46.233Z"}
+{"ColorSet":{},"level":"info","message":"","timestamp":"2015-07-02T12:39:46.233Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T12:54:18.917Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T12:54:18.917Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T12:54:18.933Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T12:54:18.933Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T12:54:18.933Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T12:54:18.933Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T12:54:18.933Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T12:54:18.933Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T12:54:18.933Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T12:54:18.933Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T12:54:26.728Z"}
+{"level":"info","message":"...{\"ColorSet\":{}}","timestamp":"2015-07-02T12:54:26.728Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T12:58:00.477Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T12:58:00.493Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T12:58:10.481Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T12:59:01.380Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T12:59:07.928Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T13:01:40.014Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T13:01:40.014Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T13:01:40.029Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T13:01:40.029Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T13:01:40.029Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T13:01:40.029Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T13:01:40.029Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T13:01:40.029Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T13:01:40.029Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T13:01:40.029Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T13:01:47.873Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T13:02:08.865Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T13:02:08.881Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T13:02:14.288Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T13:57:00.944Z"}
+{"level":"info","message":"deleting action with id: undefined","timestamp":"2015-07-02T13:57:12.247Z"}
+{"level":"info","message":"deleting action with id: ODJxTyFdZ5CYM4xM","timestamp":"2015-07-02T13:59:15.099Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T14:01:52.604Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T14:01:52.604Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T14:01:52.604Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T14:01:52.604Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T14:01:52.604Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T14:01:52.604Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T14:01:52.604Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T14:01:52.620Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T14:01:52.620Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T14:01:52.620Z"}
+{"level":"info","message":"deleting action ColorSet","timestamp":"2015-07-02T14:02:02.210Z"}
+{"level":"info","message":"new action set ColorSet","timestamp":"2015-07-02T15:35:59.519Z"}
+{"level":"info","message":"updating node 9327 to {\"name\":\"gardenino\",\"location\":\"garden\",\"address\":9327,\"_id\":\"CmGh1zpfM1MagWap\"}","timestamp":"2015-07-02T16:19:39.347Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T16:27:00.162Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T16:27:00.162Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T16:27:00.178Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T16:27:00.178Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T16:27:00.178Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T16:27:00.178Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T16:27:00.178Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T16:27:00.178Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T16:27:00.178Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T16:27:00.178Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T16:29:43.516Z"}
+{"level":"info","message":"deleting node 5454","timestamp":"2015-07-02T16:29:57.189Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T16:32:26.454Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T16:33:18.365Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T16:33:18.381Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T16:33:18.381Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T16:33:18.381Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T16:33:18.381Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T16:33:18.396Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T16:33:18.396Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T16:33:18.396Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T16:33:18.396Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T16:33:18.396Z"}
+{"level":"info","message":"deleting node 5454 and all its data","timestamp":"2015-07-02T16:33:31.289Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T16:33:44.431Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T16:33:44.431Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T16:33:44.447Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T16:33:44.447Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T16:33:44.447Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T16:33:44.447Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T16:33:44.447Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T16:33:44.447Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T16:33:44.447Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T16:33:44.447Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-02T16:49:12.657Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-02T16:49:12.673Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-02T16:49:12.673Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-02T16:49:12.673Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-02T16:49:12.673Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-02T16:49:12.688Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-02T16:49:12.688Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-02T16:49:12.688Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-02T16:49:12.688Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-02T16:49:12.688Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-13T21:31:03.279Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-13T21:31:03.294Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-13T21:31:03.294Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-13T21:31:03.294Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-13T21:31:03.294Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-13T21:31:03.294Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-13T21:31:03.294Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-13T21:31:03.294Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-13T21:31:03.310Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-13T21:31:03.310Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-13T21:55:18.231Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-13T21:55:18.247Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-13T21:55:18.262Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-13T21:55:18.262Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-13T21:55:18.262Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-13T21:55:18.262Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-13T21:55:18.262Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-13T21:55:18.262Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-13T21:55:18.262Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-13T21:55:18.262Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-13T21:59:11.921Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-13T21:59:11.936Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-13T21:59:11.936Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-13T21:59:11.936Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-13T21:59:11.936Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-13T21:59:11.952Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-13T21:59:11.952Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-13T21:59:11.952Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-13T21:59:11.952Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-13T21:59:11.952Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-13T22:13:48.828Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-13T22:13:48.844Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-13T22:13:48.860Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-13T22:13:48.860Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-13T22:13:48.875Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-13T22:13:48.875Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-13T22:13:48.875Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-13T22:13:48.875Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-13T22:13:48.891Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-13T22:13:48.891Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-18T19:39:27.759Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-18T19:39:27.762Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-18T19:42:06.990Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-18T19:42:06.990Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-18T19:44:51.766Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-18T19:44:51.766Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-18T19:44:51.766Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-18T19:44:51.766Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-18T19:44:51.766Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-18T19:44:51.766Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-18T19:44:51.782Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-18T19:44:51.782Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-18T19:44:51.782Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-18T19:44:51.782Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-19T20:11:43.503Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-19T20:11:43.518Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-19T20:11:43.534Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-19T20:11:43.534Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-19T20:11:43.534Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-19T20:11:43.550Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-19T20:11:43.550Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-19T20:11:43.550Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-19T20:11:43.565Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-19T20:11:43.565Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-19T21:57:43.836Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-19T21:57:43.836Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-19T21:57:43.836Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-19T21:57:43.836Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-19T21:57:43.836Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-19T21:57:43.836Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-19T21:57:43.836Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-19T21:57:43.836Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-19T21:57:43.852Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-19T21:57:43.852Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-22T19:39:18.502Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-22T19:39:18.502Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-22T19:39:18.502Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-22T19:39:18.502Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-22T19:39:18.518Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-22T19:39:18.518Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-22T19:39:18.518Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-22T19:39:18.518Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-22T19:39:18.518Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-22T19:39:18.518Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-22T19:44:36.947Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-22T19:44:36.947Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-22T19:44:36.947Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-22T19:44:36.947Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-22T19:44:36.947Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-22T19:44:36.947Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-22T19:44:36.947Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-22T19:44:36.947Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-22T19:44:36.963Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-22T19:44:36.963Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-22T19:57:20.202Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-22T19:57:20.204Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-22T19:57:20.211Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-22T19:57:20.212Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-22T19:57:20.215Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-22T19:57:20.216Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-22T19:57:20.218Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-22T19:57:20.218Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-22T19:57:20.219Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-22T19:57:20.220Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-22T20:10:35.065Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-22T20:10:35.067Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-22T20:10:35.075Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-22T20:10:35.075Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-22T20:10:35.077Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-22T20:10:35.078Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-22T20:10:35.079Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-22T20:10:35.079Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-22T20:10:35.080Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-22T20:10:35.081Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-22T20:10:51.399Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-22T20:10:51.399Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-22T20:10:51.399Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-22T20:10:51.399Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-22T20:10:51.399Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-22T20:10:51.399Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-22T20:10:51.415Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-22T20:10:51.415Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-22T20:10:51.416Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-22T20:10:51.418Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-22T20:25:47.013Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-22T20:25:47.013Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-22T20:25:47.013Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-22T20:25:47.013Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-22T20:25:47.029Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-22T20:25:47.029Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-22T20:25:47.029Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-22T20:25:47.029Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-22T20:25:47.029Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-22T20:25:47.029Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-22T21:37:59.960Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-22T21:37:59.960Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-22T21:37:59.960Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-22T21:37:59.960Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-22T21:37:59.960Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-22T21:37:59.976Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-22T21:37:59.976Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-22T21:37:59.976Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-22T21:37:59.976Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-22T21:37:59.976Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-07-27T21:36:51.722Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-07-27T21:36:51.722Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-07-27T21:36:51.754Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-07-27T21:36:51.754Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-07-27T21:36:51.754Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-07-27T21:36:51.769Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-07-27T21:36:51.769Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-07-27T21:36:51.769Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-07-27T21:36:51.769Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-07-27T21:36:51.785Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-02T22:09:25.146Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-02T22:09:25.162Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-02T22:09:25.193Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-02T22:09:25.193Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-02T22:09:25.193Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-02T22:09:25.209Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-02T22:09:25.209Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-02T22:09:25.209Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-02T22:09:25.209Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-02T22:09:25.224Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-02T22:12:15.188Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-02T22:12:15.188Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-02T22:12:15.203Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-02T22:12:15.203Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-02T22:12:15.203Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-02T22:12:15.203Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-02T22:12:15.203Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-02T22:12:15.203Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-02T22:12:15.203Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-02T22:12:15.203Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-02T22:15:26.554Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-02T22:15:26.554Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-02T22:15:26.558Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-02T22:15:26.558Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-02T22:15:26.558Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-02T22:15:26.558Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-02T22:15:26.558Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-02T22:15:26.558Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-02T22:15:26.558Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-02T22:15:26.558Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-05T20:42:15.735Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-05T20:42:15.747Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-05T20:42:15.771Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-05T20:42:15.771Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-05T20:42:15.775Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-05T20:42:15.779Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-05T20:42:15.787Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-05T20:42:15.787Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-05T20:42:15.791Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-05T20:42:15.799Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-05T20:43:32.363Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-05T20:43:32.379Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-05T20:43:32.400Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-05T20:43:32.400Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-05T20:43:32.400Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-05T20:43:32.400Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-05T20:43:32.415Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-05T20:43:32.415Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-05T20:43:32.415Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-05T20:43:32.415Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-05T20:44:21.927Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-05T20:44:21.947Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-05T20:44:21.963Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-05T20:44:21.963Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-05T20:44:21.963Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-05T20:44:21.979Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-05T20:44:21.979Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-05T20:44:21.979Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-05T20:44:21.979Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-05T20:44:21.979Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-05T20:46:27.101Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-05T20:46:27.113Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-05T20:46:27.137Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-05T20:46:27.141Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-05T20:46:27.145Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-05T20:46:27.149Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-05T20:46:27.157Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-05T20:46:27.157Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-05T20:46:27.161Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-05T20:46:27.169Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-05T21:18:54.910Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-05T21:18:54.910Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-05T21:18:54.941Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-05T21:18:54.941Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-05T21:18:54.957Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-05T21:18:54.957Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-05T21:18:54.957Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-05T21:18:54.957Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-05T21:18:54.972Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-05T21:18:54.972Z"}
+{"level":"info","message":"deleting garden id:undefined","timestamp":"2015-08-05T21:19:29.555Z"}
+{"level":"info","message":"deleting garden id:undefined","timestamp":"2015-08-05T21:19:44.676Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-05T21:21:40.638Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-05T21:21:40.638Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-05T21:21:40.646Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-05T21:21:40.646Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-05T21:21:40.646Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-05T21:21:40.650Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-05T21:21:40.650Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-05T21:21:40.650Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-05T21:21:40.650Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-05T21:21:40.650Z"}
+{"level":"info","message":"deleting garden id:KWlkIHQdG4Ksx4GU","timestamp":"2015-08-05T21:21:51.658Z"}
+{"level":"info","message":"deleting hello id:A3upQPScZlIop3bX","timestamp":"2015-08-05T21:22:06.169Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-08T18:47:42.688Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-08T18:47:42.688Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-08T18:47:42.703Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-08T18:47:42.703Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-08T18:47:42.703Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-08T18:47:42.703Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-08T18:47:42.703Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-08T18:47:42.703Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-08T18:47:42.703Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-08T18:47:42.703Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T20:59:21.766Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T20:59:21.778Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T20:59:21.807Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T20:59:21.807Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T20:59:21.811Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T20:59:21.815Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T20:59:21.819Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T20:59:21.820Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T20:59:21.824Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T20:59:21.828Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T20:59:21.832Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:00:34.582Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:00:34.592Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:00:34.619Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:00:34.620Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:00:34.624Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:00:34.628Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:00:34.632Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:00:34.633Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:00:34.637Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:00:34.641Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:00:34.645Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:01:20.227Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:01:20.230Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:01:20.237Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:01:20.237Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:01:20.238Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:01:20.239Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:01:20.241Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:01:20.242Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:01:20.243Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:01:20.244Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:01:20.245Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:05:10.187Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:05:10.190Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:05:10.198Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:05:10.198Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:05:10.199Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:05:10.200Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:05:10.201Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:05:10.202Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:05:10.203Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:05:10.204Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:05:10.205Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:06:24.570Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:06:24.579Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:06:24.605Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:06:24.606Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:06:24.611Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:06:24.615Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:06:24.619Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:06:24.620Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:06:24.624Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:06:24.628Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:06:24.632Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:08:46.399Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:08:46.408Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:08:46.483Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:08:46.485Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:08:46.507Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:08:46.516Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:08:46.525Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:08:46.526Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:08:46.532Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:08:46.542Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:08:46.547Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:09:53.238Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:09:53.247Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:09:53.275Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:09:53.275Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:09:53.279Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:09:53.283Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:09:53.287Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:09:53.294Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:09:53.299Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:09:53.303Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:09:53.307Z"}
+{"name":"testrule","condition":"if this","action":"then that","level":"info","message":"new rule set ","timestamp":"2015-08-11T22:09:57.047Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:11:01.743Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:11:01.752Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:11:01.777Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:11:01.778Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:11:01.782Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:11:01.786Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:11:01.791Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:11:01.791Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:11:01.796Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:11:01.800Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:11:01.806Z"}
+{"name":"testrule","condition":"if this","action":"then that","level":"info","message":"new rule set ","timestamp":"2015-08-11T22:11:06.315Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:11:20.045Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:11:20.055Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:11:20.080Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:11:20.081Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:11:20.085Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:11:20.089Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:11:20.093Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:11:20.094Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:11:20.098Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:11:20.102Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:11:20.107Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:11:44.209Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:11:44.218Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:11:44.247Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:11:44.248Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:11:44.252Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:11:44.258Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:11:44.262Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:11:44.262Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:11:44.268Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:11:44.275Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:11:44.279Z"}
+{"name":"testrule","condition":"if this","action":"then that","level":"info","message":"new rule set ","timestamp":"2015-08-11T22:11:47.187Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-11T22:13:06.237Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-11T22:13:06.246Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-11T22:13:06.271Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-11T22:13:06.271Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-11T22:13:06.275Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-11T22:13:06.279Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-11T22:13:06.283Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-11T22:13:06.283Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-11T22:13:06.288Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-11T22:13:06.292Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-11T22:13:06.296Z"}
+{"name":"testrule","condition":"if this","action":"then that","level":"info","message":"new rule set ","timestamp":"2015-08-11T22:13:21.333Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T17:54:21.333Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T17:54:21.333Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T17:54:21.345Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T17:54:21.345Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T17:54:21.345Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T17:54:21.345Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T17:54:21.349Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T17:54:21.349Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T17:54:21.349Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T17:54:21.349Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T17:54:21.353Z"}
+{"name":"test","condition":"testes","action":"sdrwerwer","level":"info","message":"new rule set ","timestamp":"2015-08-16T18:27:13.496Z"}
+{"name":"test","condition":"testes","action":"sdrwerwer","level":"info","message":"new rule set ","timestamp":"2015-08-16T18:27:53.635Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T18:33:36.760Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T18:33:36.776Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T18:33:36.776Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T18:33:36.776Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T18:33:36.776Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T18:33:36.776Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T18:33:36.776Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T18:33:36.776Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T18:33:36.776Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T18:33:36.792Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T18:33:36.792Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T18:33:39.461Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T18:33:39.461Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T18:33:39.477Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T18:34:00.672Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T18:34:00.672Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T18:34:00.719Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T18:34:00.719Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T18:34:00.719Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T18:34:00.734Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T18:34:00.734Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T18:34:00.734Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T18:34:00.734Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T18:34:00.734Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T18:34:00.751Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T18:35:28.974Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T18:35:28.986Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T18:35:29.020Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T18:35:29.020Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T18:35:29.024Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T18:35:29.028Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T18:35:29.032Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T18:35:29.032Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T18:35:29.032Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T18:35:29.032Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T18:35:29.050Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T18:37:17.292Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T18:37:17.292Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T18:37:17.308Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T18:37:18.382Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T18:37:18.386Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T18:37:18.398Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T18:37:18.398Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T18:37:18.398Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T18:37:18.398Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T18:37:18.402Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T18:37:18.402Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T18:37:18.402Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T18:37:18.402Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T18:37:18.406Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T18:41:47.607Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T18:41:47.623Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T18:41:47.638Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T18:41:47.638Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T18:41:47.654Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T18:41:47.654Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T18:41:47.654Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T18:41:47.654Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T18:41:47.670Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T18:41:47.670Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T18:41:47.670Z"}
+{"level":"info","message":"deleting rule testrule","timestamp":"2015-08-16T18:43:43.520Z"}
+{"name":"asdasd","condition":"12312312","action":"zxczxczxc","level":"info","message":"new rule set ","timestamp":"2015-08-16T18:44:00.022Z"}
+{"level":"info","message":"deleting rule asdasd","timestamp":"2015-08-16T18:44:07.299Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-16T18:46:52.617Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-16T18:46:52.629Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-16T18:46:52.657Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-16T18:46:52.657Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-16T18:46:52.661Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-16T18:46:52.665Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-16T18:46:52.669Z"}
+{"level":"info","message":"loading DB otherthing.db","timestamp":"2015-08-16T18:46:52.669Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-16T18:46:52.677Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-16T18:46:52.681Z"}
+{"level":"info","message":"loading DB thing.db","timestamp":"2015-08-16T18:46:52.685Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-08-31T17:53:50.192Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-08-31T17:53:50.203Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-08-31T17:53:50.237Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-08-31T17:53:50.237Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-08-31T17:53:50.244Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-08-31T17:53:50.249Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-08-31T17:53:50.253Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-08-31T17:53:50.253Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-08-31T17:53:50.258Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:09:20.807Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:09:20.819Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:09:20.875Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:09:20.879Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:09:20.883Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:09:20.887Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:09:20.895Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:09:20.895Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:09:20.903Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:13:56.440Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:13:56.455Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:13:56.487Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:13:56.487Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:13:56.487Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:13:56.487Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:13:56.502Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:13:56.502Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:13:56.513Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:15:25.753Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:15:25.753Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:15:25.772Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:15:25.772Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:15:25.772Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:15:25.776Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:15:25.776Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:15:25.776Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:15:25.780Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:15:45.588Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:15:45.590Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:15:45.597Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:15:45.598Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:15:45.599Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:15:45.600Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:15:45.601Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:15:45.601Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:15:45.602Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:16:15.319Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:16:15.323Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:16:15.335Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:16:15.335Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:16:15.335Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:16:15.335Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:16:15.335Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:16:15.335Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:16:15.339Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:16:16.043Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:16:16.043Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:16:16.043Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:16:16.043Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:16:16.043Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:16:16.059Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:16:16.059Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:16:16.059Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:16:16.059Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:18:28.667Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:18:28.682Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:18:28.713Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:18:28.713Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:18:28.713Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:18:28.713Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:18:28.729Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:18:28.729Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:18:28.729Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:19:40.669Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:19:40.684Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:19:40.716Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:19:40.716Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:19:40.731Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:19:40.731Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:19:40.731Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:19:40.731Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:19:40.747Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:20:28.113Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:20:28.129Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:20:28.145Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:20:28.145Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:20:28.160Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:20:28.160Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:20:28.160Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:20:28.160Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:20:28.160Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:21:33.460Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:21:33.476Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:21:33.491Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:21:33.491Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:21:33.507Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:21:33.507Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:21:33.507Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:21:33.523Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:21:33.523Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:23:58.232Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:23:58.248Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:23:58.279Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:23:58.279Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:23:58.279Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:23:58.279Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:23:58.295Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:23:58.295Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:23:58.295Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-20T20:24:32.503Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-20T20:24:32.512Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-20T20:24:32.543Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-20T20:24:32.543Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-20T20:24:32.543Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-20T20:24:32.543Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-20T20:24:32.559Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-20T20:24:32.559Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-20T20:24:32.559Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-24T20:40:07.849Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-24T20:40:07.859Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-24T20:40:07.889Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-24T20:40:07.889Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-24T20:40:07.894Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-24T20:40:07.899Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-24T20:40:07.899Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-24T20:40:07.899Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-24T20:40:07.904Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-24T21:31:21.834Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-24T21:31:21.834Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-24T21:31:21.834Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-24T21:31:21.834Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-24T21:31:21.834Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-24T21:31:21.834Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-24T21:31:21.834Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-24T21:31:21.834Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-24T21:31:21.850Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-24T21:32:45.268Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-24T21:32:45.271Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-24T21:32:45.276Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-24T21:32:45.276Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-24T21:32:45.276Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-24T21:32:45.276Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-24T21:32:45.276Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-24T21:32:45.276Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-24T21:32:45.276Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-24T21:38:32.792Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-24T21:38:32.792Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-24T21:38:32.792Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-24T21:38:32.792Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-24T21:38:32.792Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-24T21:38:32.792Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-24T21:38:32.807Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-24T21:38:32.807Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-24T21:38:32.807Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-09-24T21:40:55.944Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-09-24T21:40:55.947Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-09-24T21:40:55.954Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-09-24T21:40:55.954Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-09-24T21:40:55.955Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-09-24T21:40:55.956Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-09-24T21:40:55.957Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-09-24T21:40:55.957Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-09-24T21:40:55.957Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-10T11:15:27.367Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-10T11:15:27.367Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-10T11:15:27.382Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-10T11:15:27.382Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-10T11:15:27.382Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-10T11:15:27.382Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-10T11:15:27.382Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-10T11:15:27.382Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-10T11:15:27.382Z"}
+{"name":"rain","condition":"lastMessage.rain > 15","action":"send()","level":"info","message":"new rule set ","timestamp":"2015-10-13T21:19:34.647Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-18T21:39:34.874Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-18T21:39:34.889Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-18T21:39:34.931Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-18T21:39:34.931Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-18T21:39:34.936Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-18T21:39:34.942Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-18T21:39:34.950Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-18T21:39:34.950Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-18T21:39:34.958Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-18T21:51:02.573Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-18T21:51:02.577Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-18T21:51:02.588Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-18T21:51:02.588Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-18T21:51:02.590Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-18T21:51:02.591Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-18T21:51:02.593Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-18T21:51:02.593Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-18T21:51:02.595Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T21:54:45.781Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T21:54:45.784Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T21:54:45.797Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T21:54:45.797Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T21:54:45.800Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T21:54:45.802Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T21:54:45.804Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T21:54:45.804Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T21:54:45.806Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T21:54:54.420Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T21:54:54.422Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T21:54:54.430Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T21:54:54.430Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T21:54:54.431Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T21:54:54.432Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T21:54:54.434Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T21:54:54.434Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T21:54:54.435Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T21:56:54.010Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T21:56:54.013Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T21:56:54.020Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T21:56:54.020Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T21:56:54.022Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T21:56:54.023Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T21:56:54.024Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T21:56:54.024Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T21:56:54.025Z"}
+{"level":"info","message":"creating db for timestamp and a new REST route","timestamp":"2015-10-19T21:57:03.711Z"}
+{"level":"info","message":"found a new node, address: undefined","timestamp":"2015-10-19T21:57:03.719Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T21:58:53.275Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T21:58:53.277Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T21:58:53.285Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T21:58:53.285Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T21:58:53.286Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T21:58:53.288Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T21:58:53.289Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T21:58:53.289Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T21:58:53.290Z"}
+{"level":"info","message":"loading DB timestamp.db","timestamp":"2015-10-19T21:58:53.291Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:01:36.585Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:01:36.588Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:01:36.595Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:01:36.595Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:01:36.596Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:01:36.598Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:01:36.599Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:01:36.599Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:01:36.600Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:03:34.337Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:03:34.340Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:03:34.348Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:03:34.348Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:03:34.349Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:03:34.350Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:03:34.352Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:03:34.352Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:03:34.353Z"}
+{"level":"info","message":"Rule rain activated","timestamp":"2015-10-19T22:04:06.180Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:04:34.956Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:04:34.958Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:04:34.966Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:04:34.966Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:04:34.967Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:04:34.969Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:04:34.970Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:04:34.970Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:04:34.971Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:05:12.377Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:05:12.380Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:05:12.389Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:05:12.390Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:05:12.391Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:05:12.392Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:05:12.393Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:05:12.393Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:05:12.394Z"}
+{"level":"info","message":"Rule rain activated","timestamp":"2015-10-19T22:05:44.211Z"}
+{"level":"error","message":"Error while executing rule rain, cause: {}","timestamp":"2015-10-19T22:05:44.212Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:06:08.219Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:06:08.222Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:06:08.229Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:06:08.230Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:06:08.231Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:06:08.233Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:06:08.235Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:06:08.235Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:06:08.237Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:12:50.792Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:12:50.795Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:12:50.802Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:12:50.802Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:12:50.804Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:12:50.805Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:12:50.807Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:12:50.807Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:12:50.808Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:13:14.146Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:13:14.149Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:13:14.161Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:13:14.161Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:13:14.162Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:13:14.164Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:13:14.166Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:13:14.166Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:13:14.167Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:13:16.872Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:13:16.875Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:13:16.882Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:13:16.883Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:13:16.884Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:13:16.885Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:13:16.886Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:13:16.886Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:13:16.888Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:21:24.515Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:21:24.518Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:21:24.526Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:21:24.526Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:21:24.527Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:21:24.528Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:21:24.529Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:21:24.530Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:21:24.531Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:21:53.576Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:21:53.578Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:21:53.586Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:21:53.587Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:21:53.588Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:21:53.589Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:21:53.590Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:21:53.590Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:21:53.592Z"}
+{"level":"info","message":"starting piot node server","timestamp":"2015-10-19T22:22:14.567Z"}
+{"level":"info","message":"loading nodes DB","timestamp":"2015-10-19T22:22:14.569Z"}
+{"level":"info","message":"loading DB actionsdb.db","timestamp":"2015-10-19T22:22:14.577Z"}
+{"level":"info","message":"loading DB color.db","timestamp":"2015-10-19T22:22:14.577Z"}
+{"level":"info","message":"loading DB garden.db","timestamp":"2015-10-19T22:22:14.578Z"}
+{"level":"info","message":"loading DB hello.db","timestamp":"2015-10-19T22:22:14.580Z"}
+{"level":"info","message":"loading DB nodesdb.db","timestamp":"2015-10-19T22:22:14.581Z"}
+{"level":"info","message":"loading DB room.db","timestamp":"2015-10-19T22:22:14.581Z"}
+{"level":"info","message":"loading DB rulesdb.db","timestamp":"2015-10-19T22:22:14.582Z"}
