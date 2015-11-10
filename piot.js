@@ -191,7 +191,9 @@ function storeData(obj){
     nodesdb.findOne({ address: content.sourceAddress }, function(err, docs){
       if((docs === null) || (docs.length === 0)){
         logger.info('found a new node, address: '+content.sourceAddress);
-        nodesdb.add({ name : null, location: null, address: content.sourceAddress });
+        nodesdb.add({ name : null, location: null, address: content.sourceAddress, lastMessageTS: content.timestamp });
+      } else {
+        nodesdb.update({ address: content.sourceAddress }, {$set: { lastMessageTS: content.timestamp }});
       }
     });
     //Execute rules
