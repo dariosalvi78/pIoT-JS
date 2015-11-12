@@ -87,6 +87,41 @@
             locgrp.append(location);
             body.append(locgrp);
 
+            var optimegrp = $('<div class="form-group"></div>');
+            optimegrp.append($('<label for="optime_'+item._id+'">operation time</label>'));
+            optimegrp.append($('<input type="text" class="form-control" value="'+item.operationTime+' ms" id="optime_'+item._id+'" readonly>'));
+            body.append(optimegrp);
+
+            var vccgrp = $('<div class="form-group"></div>');
+            vccgrp.append($('<label for="vcc_'+item._id+'">operating voltage</label>'));
+            vccgrp.append($('<input type="text" class="form-control" value="'+item.vcc+' V" id="vcc_'+item._id+'" readonly>'));
+            body.append(vccgrp);
+
+            var tempgrp = $('<div class="form-group"></div>');
+            tempgrp.append($('<label for="temp_'+item._id+'">internal temperature</label>'));
+            tempgrp.append($('<input type="text" class="form-control" value="'+item.temperature+' C" id="temp_'+item._id+'" readonly>'));
+            body.append(tempgrp);
+
+            var laststgrp = $('<div class="form-group"></div>');
+            laststgrp.append($('<label for="lastst_'+item._id+'">last message received</label>'));
+            laststgrp.append($('<input type="text" class="form-control" value="'+new Date(item.lastMessageTS)+'" id="lastst_'+item._id+'" readonly>'));
+            body.append(laststgrp);
+
+            var sentgrp = $('<div class="form-group"></div>');
+            sentgrp.append($('<label for="sent_'+item._id+'">sent messages since start</label>'));
+            sentgrp.append($('<input type="number" class="form-control" value="'+item.sentMessages+'" id="sent_'+item._id+'" readonly>'));
+            body.append(sentgrp);
+
+            var usentgrp = $('<div class="form-group"></div>');
+            usentgrp.append($('<label for="usent_'+item._id+'">lost messages since start</label>'));
+            usentgrp.append($('<input type="number" class="form-control" value="'+item.unsentMessages+'" id="usent_'+item._id+'" readonly>'));
+            body.append(usentgrp);
+
+            var recgrp = $('<div class="form-group"></div>');
+            recgrp.append($('<label for="rec_'+item._id+'">received messages since start</label>'));
+            recgrp.append($('<input type="number" class="form-control" value="'+item.receivedMessages+'" id="rec_'+item._id+'" readonly>'));
+            body.append(recgrp);
+
             var savebtn = $('<button type="button" class="btn btn-default">Save</button>');
             savebtn.click(function(){
               item.name = name.val();

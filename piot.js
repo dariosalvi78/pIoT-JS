@@ -189,11 +189,23 @@ function storeData(obj){
     dbs[name].add(content);
 
     nodesdb.findOne({ address: content.sourceAddress }, function(err, docs){
+      var update = { lastMessageTS: content.timestamp };
+      if(name == 'hello'){
+        update.temperature = content.temperature;
+        update.operationTime = content.operationTime;
+        update.vcc = content.vcc;
+        update.sentMessages = content.sentMessages;
+        update.unsentMessages = content.unsentMessages;
+        update.receivedMessages = content.receivedMessages;
+      }
       if((docs === null) || (docs.length === 0)){
         logger.info('found a new node, address: '+content.sourceAddress);
-        nodesdb.add({ name : null, location: null, address: content.sourceAddress, lastMessageTS: content.timestamp });
+        update.name = null;
+        update.location = null;
+        update.address = content.sourceAddress;
+        nodesdb.add(update);
       } else {
-        nodesdb.update({ address: content.sourceAddress }, {$set: { lastMessageTS: content.timestamp }});
+        nodesdb.update({ address: content.sourceAddress }, {$set: update});
       }
     });
     //Execute rules
