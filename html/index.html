@@ -34,16 +34,16 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <div class="panel panel-default">
-            <div class="panel-heading">Active nodes</div>
-            <div class="panel-body" id="nodes">
-
+            <div class="panel-heading">Messages Statistics</div>
+            <div class="panel-body" id="messagesStats">
+              <div style="margin-bottom:20px;"> <span style="font-size:30px" id="totalMessages"></span> <span style="font-size:20px">messages</span></div>
             </div>
             <div class="panel-footer"></div>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <div class="panel panel-default">
             <div class="panel-heading">Outdoor temperature</div>
             <div class="panel-body"><div style="font-size:50px" id="outTemp"></div>
@@ -51,7 +51,7 @@
             <div class="panel-footer" id="outTempFooter"></div>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <div class="panel panel-default">
             <div class="panel-heading">Indoor temperature</div>
             <div class="panel-body"><div style="font-size:50px" id="inTemp"></div>
@@ -59,11 +59,34 @@
             <div class="panel-footer" id="inTempFooter"></div>
           </div>
         </div>
+        <div class="col-sm-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">Active nodes</div>
+            <div class="panel-body" id="nodes">
+            </div>
+            <div class="panel-footer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
       </div>
     </div>
 
     <script>
     $(function(){
+
+      $.getJSON( '/messagetypes' ,null, function(data){
+        $.each(data, function(index, item) {
+          if(item.name == 'all'){
+            $('#totalMessages').text(item.count);
+          } else {
+            var mess= $('<div> <span style="font-size:25px">'+item.count+'</span> <span style="font-size:20px">'+item.name+'</span></div>');
+            $('#messagesStats').append(mess);
+          }
+        });
+      });
+
       $.getJSON('messages/garden' ,{
         skip : 0,
         limit : 1,
