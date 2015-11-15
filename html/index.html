@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="jquery-dateFormat.min.js"></script>
+  <script src="jscolor.min.js"></script>
 </head>
 <body>
 
@@ -70,66 +71,117 @@
       </div>
       <div class="row">
 
+        <div class="col-sm-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">Send color</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="text" class="form-control jscolor {onFineChange:'updateColor(this)'}" id="color" value="FFFFFF">
+              </div>
+              <div class="form-group">
+                <label for="duration">Duration (s):</label>
+                <input type="number" class="form-control" id="duration" value="10">
+              </div>
+              <div class="form-group">
+                <label for="blink">Blink:</label>
+                <select class="form-control" id="blink">
+                  <option value="0">None</option>
+                  <option value="1">Strobo</option>
+                  <option value="2">Soft</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="period">Period (ms):</label>
+                <input type="number" class="form-control" id="period" value="1000">
+              </div>
+              <button class="btn btn-default" id="colorsend">Send</button>
+            </div>
+            <div class="panel-footer"></div>
+          </div>
+        </div>
       </div>
+
     </div>
+  </div>
 
-    <script>
-    $(function(){
+  <script>
+  var color = [255,255,255];
+  function updateColor(picker) {
+    color = picker.rgb;
+  };
 
-      $.getJSON( '/messagetypes' ,null, function(data){
-        $.each(data, function(index, item) {
-          if(item.name == 'all'){
-            $('#totalMessages').text(item.count);
-          } else {
-            var mess= $('<div> <span style="font-size:25px">'+item.count+'</span> <span style="font-size:20px">'+item.name+'</span></div>');
-            $('#messagesStats').append(mess);
-          }
-        });
-      });
+  $(function(){
 
-      $.getJSON('messages/garden' ,{
-        skip : 0,
-        limit : 1,
-        srcAddr: 7215
-      }, function(data){
-        var temp = data[0].garden.temperature;
-
-        var dt = new Date(data[0].garden.timestamp);
-        $('#outTemp').text(temp +' C');
-        var rain = 'dry';
-        if (data[0].garden.rain > 500) rain = 'wet';
-        if (data[0].garden.rain > 600) rain = 'rain';
-        $('#outHumRain').text('humidity: '+data[0].garden.humidity +'%, '+ rain);
-        $('#outTempFooter').text('Data got '+ jQuery.format.prettyDate(dt));
-      });
-
-      $.getJSON('messages/room' ,{
-        skip : 0,
-        limit : 1,
-        srcAddr: 5454
-      }, function(data){
-        var temp = data[0].room.temperature;
-
-        var dt = new Date(data[0].room.timestamp);
-        $('#inTemp').text(temp +' C');
-        $('#inHum').text('humidity: '+data[0].room.humidity +'%');
-        $('#inTempFooter').text('Data got '+ jQuery.format.prettyDate(dt));
-      });
-
-      $.getJSON( '/nodes' , null, function(data){
-        $.each(data, function(index, item) {
-          var dl = $("<dl></dl>");
-          var dt = $("<dt>"+item.name+' ('+item.address+")</dt>");
-          var ts = new Date(item.lastMessageTS);
-          var dd1 = $("<dd>- last message: "+jQuery.format.prettyDate(ts)+"</dd>");
-          var dd2 = $("<dd>- voltage: "+item.vcc+"</dd>");
-          dl.append(dt);
-          dl.append(dd1);
-          dl.append(dd2);
-          $("#nodes").append(dl);
-        });
+    $.getJSON( '/messagetypes' ,null, function(data){
+      $.each(data, function(index, item) {
+        if(item.name == 'all'){
+          $('#totalMessages').text(item.count);
+        } else {
+          var mess= $('<div> <span style="font-size:25px">'+item.count+'</span> <span style="font-size:20px">'+item.name+'</span></div>');
+          $('#messagesStats').append(mess);
+        }
       });
     });
+
+    $.getJSON('messages/garden' ,{
+      skip : 0,
+      limit : 1,
+      srcAddr: 7215
+    }, function(data){
+      var temp = data[0].garden.temperature;
+
+      var dt = new Date(data[0].garden.timestamp);
+      $('#outTemp').text(temp +' C');
+      var rain = 'dry';
+      if (data[0].garden.rain > 500) rain = 'wet';
+      if (data[0].garden.rain > 600) rain = 'rain';
+      $('#outHumRain').text('humidity: '+data[0].garden.humidity +'%, '+ rain);
+      $('#outTempFooter').text('Data got '+ jQuery.format.prettyDate(dt));
+    });
+
+    $.getJSON('messages/room' ,{
+      skip : 0,
+      limit : 1,
+      srcAddr: 5454
+    }, function(data){
+      var temp = data[0].room.temperature;
+
+      var dt = new Date(data[0].room.timestamp);
+      $('#inTemp').text(temp +' C');
+      $('#inHum').text('humidity: '+data[0].room.humidity +'%');
+      $('#inTempFooter').text('Data got '+ jQuery.format.prettyDate(dt));
+    });
+
+    $.getJSON( '/nodes' , null, function(data){
+      $.each(data, function(index, item) {
+        var dl = $("<dl></dl>");
+        var dt = $("<dt>"+item.name+' ('+item.address+")</dt>");
+        var ts = new Date(item.lastMessageTS);
+        var dd1 = $("<dd>- last message: "+jQuery.format.prettyDate(ts)+"</dd>");
+        var dd2 = $("<dd>- voltage: "+item.vcc+"</dd>");
+        dl.append(dt);
+        dl.append(dd1);
+        dl.append(dd2);
+        $("#nodes").append(dl);
+      });
+    });
+
+    $('#colorsend').click(function(){
+      var cmd = {
+        ColorSet: {
+          destAddress: 5454,
+          red: Math.round(color[0]),
+          green: Math.round(color[1]),
+          blue: Math.round(color[2]),
+          duration: parseInt($('#duration').val()),
+          flashPeriod: parseInt($('#period').val()),
+          flashMode: parseInt($('#blink').val())
+        }
+      };
+      $.post('/serials/current', { sendline: JSON.stringify(cmd) });
+    });
+  });
   </script>
 </body>
 </html>
