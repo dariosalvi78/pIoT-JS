@@ -111,7 +111,7 @@
               var delbtn = $('<button type="button" class="btn btn-default">Delete</button>');
               delbtn.click(function(){
                 $.ajax({
-                  url: '/rules/'+name,
+                  url: encodeURI('/rules/'+name),
                   type: 'DELETE'
                 }).done(function( data ) {
                   refreshcontent();

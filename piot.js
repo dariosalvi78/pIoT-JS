@@ -387,7 +387,7 @@ function serveRules(request){
     request.respond('OK');
   }
   else if(request.method.toLowerCase() == "delete"){
-    var name = request.params.rulename;
+    var name = decodeURI(request.params.rulename);
     logger.info('deleting rule ' + name);
     rulesdb.remove({ name: name }, { multi: true }, function(err, numReplaced, newDoc){
       if(err) request.respond(JSON.stringify(err));
