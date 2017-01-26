@@ -243,7 +243,8 @@ $(function(){
         body.append(formgroup);
       } else if(typeof val === 'boolean'){
         var checkbox = $('<div class="checkbox"></div>');
-        checkbox.append($('<label><input type="checkbox" id="'+prop+'_'+id+'">'+prop+'</label>'));
+	if(val) checkbox.append($('<label><input type="checkbox" id="'+prop+'_'+id+'" checked>'+prop+'</label>'));
+	else checkbox.append($('<label><input type="checkbox" id="'+prop+'_'+id+'">'+prop+'</label>'));
         body.append(checkbox);
       } else if(typeof val === 'object'){
         var collapsible = $('<p><a data-toggle="collapse" data-target="#'+prop+'_'+id+'" style="cursor: pointer;"><strong>'+prop+'</strong></a></p>');
